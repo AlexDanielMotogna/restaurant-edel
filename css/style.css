@@ -2492,7 +2492,7 @@ body.visible-sidebar {
 
 .menu-tabs .dish-block {
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 12px;
 }
 
 .menu-tabs .dish-block:last-child {
@@ -2502,8 +2502,8 @@ body.visible-sidebar {
 .menu-tabs .dish-block .inner-box {
   position: relative;
   padding-left: 120px;
-  min-height: 100px;
-  padding-top: 10px;
+  min-height: 70px;
+  padding-top: 0px;
 }
 
 .menu-tabs .dish-block .dish-image {
@@ -2535,8 +2535,8 @@ body.visible-sidebar {
 
 .menu-tabs .dish-block .title {
   position: relative;
-  line-height: 24px;
-  margin-bottom: 10px;
+  line-height: 20px;
+  margin-bottom: 5px;
   display: flex;
 }
 
@@ -2587,8 +2587,9 @@ body.visible-sidebar {
 
 .menu-tabs .dish-block .desc {
   position: relative;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--color-three);
+  line-height: 1.4;
 }
 
 .menu-tabs .dish-block .desc a {
