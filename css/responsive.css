@@ -975,6 +975,17 @@
 	h5{
 		font-size: 18px;
 	}
+	
+	/* menu category titles */
+	.menu-tabs .menu-col .inner h5 {
+		font-size: 18px;
+		margin-top: 25px;
+		margin-bottom: 15px;
+	}
+	
+	.menu-tabs .menu-col .inner h5:first-child {
+		margin-top: 0;
+	}
 
 
 	.banner-section .swiper-button-prev,
@@ -1019,12 +1030,18 @@
 
 	/* menu */
 	.menu-tabs .buttons .tab-buttons .tab-btn{
-		margin: 0 22px;
-		font-size: 16px;
+		margin: 0 15px;
+		font-size: 14px;
+		padding: 8px 0;
 	}
 
 	.menu-tabs .buttons .tab-buttons .tab-btn:after{
-		margin-left: 22px;
+		margin-left: 15px;
+	}
+	
+	.menu-tabs .buttons .tab-buttons {
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 
@@ -1486,17 +1503,22 @@
 	}
 
 	.menu-tabs .dish-block .dish-image {
-		width: 80px;
-		height: 80px;
+		width: 70px;
+		height: 70px;
 	}
 
 	.menu-tabs .dish-block .dish-image img {
-		width: 80px;
-		height: 80px;
+		width: 70px;
+		height: 70px;
 	}
 
 	.menu-tabs .dish-block .inner-box {
-		padding-left: 100px;
+		padding-left: 8px;
+		min-height: 70px;
+	}
+	
+	.menu-tabs .dish-block {
+		margin-bottom: 15px;
 	}
 
 
@@ -1648,6 +1670,13 @@
 	h4{
 		font-size: 25px;
 	}
+	
+	/* menu category titles */
+	.menu-tabs .menu-col .inner h5 {
+		font-size: 16px;
+		margin-top: 20px;
+		margin-bottom: 12px;
+	}
 
 
 	/* banner */
@@ -1782,7 +1811,9 @@
 	/* menu tab style */
 	.menu-tabs .buttons .tab-buttons .tab-btn{
 		display: block;
-		margin: 0 0 20px;
+		margin: 0 0 15px;
+		font-size: 15px;
+		padding: 10px 0;
 	}
 
 	.menu-tabs .buttons .tab-buttons .tab-btn:last-child{
@@ -1814,13 +1845,43 @@
 	
 	.menu-tabs .dish-block .inner-box{
 		padding-top:0px;
+		padding-left: 8px;
+		min-height: 70px;
+	}
+	
+	.menu-tabs .dish-block {
+		margin-bottom: 18px;
+	}
+	
+	.menu-tabs .dish-block .dish-image {
+		display: none;
+	}
+
+	.menu-tabs .dish-block .dish-image img {
+		display: none;
+	}
+	
+	.menu-tabs .dish-block .title {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	
+	.menu-tabs .dish-block .title .ttl {
+		flex: 1;
+		padding-right: 10px;
+	}
+	
+	.menu-tabs .dish-block .title .menu-list-line {
+		display: none;
 	}
 	
 	.menu-tabs .dish-block .title .price,
 	.menu-two .dish-block .title .price{
-		position:relative;
-		right:0px;
-		float:left;
+		position: relative;
+		right: 0px;
+		float: none;
+		flex-shrink: 0;
 		padding-left:0px;
 	}
 	
