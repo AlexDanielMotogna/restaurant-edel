@@ -86,7 +86,7 @@
                                 <li><a href="#speisekarte">Speisekarte</a></li>
                                 <li><a href="#mittagsmenu">Mittagsmenü</a></li>
                                 <li><a href="#bewertungen">Bewertungen</a></li>
-                                <li><a href="#kontakt">Kontakt</a></li>
+                                <li><a href="javascript:void(0);" onclick="openContactModal()">Kontakt</a></li>
                             </ul>
                         </nav>
                         <!-- Main Menu End-->
@@ -149,7 +149,7 @@
                 <li><a href="#speisekarte">Speisekarte</a></li>
                 <li><a href="#mittagsmenu">Mittagsmenü</a></li>
                 <li><a href="#bewertungen">Bewertungen</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="javascript:void(0);" onclick="openContactModal()">Kontakt</a></li>
             </ul>
         </div><!-- /.Side-menu -->
 
@@ -874,6 +874,231 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+</script>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="contact-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeContactModal()">&times;</span>
+        <h3 style="color: #c7a36c; text-align: center; margin-bottom: 30px; font-size: 28px;">Kontaktieren Sie uns</h3>
+        <div class="contact-buttons">
+            <a href="tel:+436765809878" class="contact-btn phone-btn">
+                <i class="fas fa-phone"></i>
+                <span>Anrufen</span>
+                <small>+43 676 5809878</small>
+            </a>
+            <a href="https://wa.me/436765809878" target="_blank" class="contact-btn whatsapp-btn">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+                <small>Chat starten</small>
+            </a>
+            <a href="mailto:office@restaurant-edel.at" class="contact-btn email-btn">
+                <i class="fas fa-envelope"></i>
+                <span>E-Mail</span>
+                <small>office@restaurant-edel.at</small>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+.contact-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.contact-modal .modal-content {
+    background: linear-gradient(135deg, #1a3a2e 0%, #0f2419 100%);
+    margin: 10% auto;
+    padding: 40px;
+    border: 2px solid #c7a36c;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideDown 0.4s ease;
+    box-shadow: 0 10px 40px rgba(199, 163, 108, 0.3);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.contact-modal .close-modal {
+    color: #c7a36c;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-modal .close-modal:hover {
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: rgba(199, 163, 108, 0.1);
+    border: 2px solid #c7a36c;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(199, 163, 108, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-btn:hover::before {
+    left: 100%;
+}
+
+.contact-btn:hover {
+    background: rgba(199, 163, 108, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(199, 163, 108, 0.3);
+}
+
+.contact-btn i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #c7a36c;
+}
+
+.contact-btn span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.contact-btn small {
+    font-size: 14px;
+    color: #c7a36c;
+}
+
+.phone-btn:hover i {
+    animation: shake 0.5s ease;
+}
+
+.whatsapp-btn:hover i {
+    animation: bounce 0.5s ease;
+}
+
+.email-btn:hover i {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@media (max-width: 600px) {
+    .contact-modal .modal-content {
+        margin: 20% auto;
+        padding: 30px 20px;
+        width: 95%;
+    }
+    
+    .contact-btn {
+        padding: 20px;
+    }
+    
+    .contact-btn i {
+        font-size: 35px;
+    }
+    
+    .contact-btn span {
+        font-size: 18px;
+    }
+}
+</style>
+
+<script>
+// Asegurar que el scroll esté habilitado al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.style.overflow = 'auto';
+});
+
+function openContactModal() {
+    document.getElementById('contactModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeContactModal() {
+    document.getElementById('contactModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar el modal al hacer clic fuera de él
+window.onclick = function(event) {
+    const modal = document.getElementById('contactModal');
+    if (event.target == modal) {
+        closeContactModal();
+    }
+}
+
+// Cerrar el modal con la tecla ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeContactModal();
+    }
 });
 </script>
 
