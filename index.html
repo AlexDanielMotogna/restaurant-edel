@@ -942,15 +942,18 @@ document.addEventListener('DOMContentLoaded', function() {
 .contact-modal {
     display: none;
     position: fixed;
-    z-index: 9999;
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     animation: fadeIn 0.3s ease;
-    overflow-y: auto;
+    overflow-y: auto !important;
+    overflow-x: hidden;
     padding: 20px 0;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes fadeIn {
@@ -960,7 +963,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .contact-modal .modal-content {
     background: linear-gradient(135deg, #1a3a2e 0%, #0f2419 100%);
-    margin: 20px auto;
+    margin: auto;
     padding: 40px;
     border: 2px solid #c7a36c;
     border-radius: 15px;
@@ -969,9 +972,9 @@ document.addEventListener('DOMContentLoaded', function() {
     position: relative;
     animation: slideDown 0.4s ease;
     box-shadow: 0 10px 40px rgba(199, 163, 108, 0.3);
-    min-height: auto;
-    max-height: calc(100vh - 40px);
-    overflow-y: auto;
+    max-height: 90vh;
+    overflow-y: auto !important;
+    overflow-x: hidden;
 }
 
 /* Custom scrollbar para el modal */
