@@ -49,13 +49,13 @@ if($('.main-header').length){
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.loader-wrap').length){
-			$('.loader-wrap').delay(500).fadeOut(500);
+			$('.loader-wrap').delay(300).fadeOut(300);
 		}
 	}
 
 	if ($(".preloader-close").length) {
         $(".preloader-close").on("click", function(){
-            $('.loader-wrap').delay(200).fadeOut(500);
+            $('.loader-wrap').delay(100).fadeOut(300);
         })
     }
 	
