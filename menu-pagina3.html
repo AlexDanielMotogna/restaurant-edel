@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Kindermenü • Beilagen • Dessert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #ffffff;
+            background: #18312e;
+            line-height: 1.6;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #18312e;
+            position: relative;
+            padding: 25px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .menu-logo {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .page-title {
+            font-family: 'Fraunces', serif;
+            font-size: 24px;
+            color: #c7a36c;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            margin-top: 80px;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #c7a36c;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            color: #c7a36c;
+            margin: 14px 0 8px 0;
+            font-weight: 600;
+            letter-spacing: 0;
+            text-transform: capitalize;
+        }
+
+        .menu-item {
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+            line-height: 16px;
+            position: relative;
+        }
+
+        .item-name {
+            font-size: 13px;
+            font-weight: 400;
+            color: #ffffff;
+            padding-right: 10px;
+            text-transform: uppercase;
+            background: #18312e;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-header::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-bottom: 1px dotted rgba(199, 163, 108, 0.4);
+            z-index: 0;
+        }
+
+        .item-price {
+            font-size: 13px;
+            font-weight: 600;
+            color: #c7a36c;
+            white-space: nowrap;
+            padding-left: 10px;
+            background: #18312e;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-description {
+            font-size: 11px;
+            color: rgba(255,255,255,0.7);
+            font-style: normal;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        .item-allergens {
+            font-size: 10px;
+            color: rgba(199, 163, 108, 0.7);
+            margin-top: 2px;
+        }
+
+        .thank-you {
+            margin-top: 40px;
+            text-align: center;
+            padding: 25px;
+            border-top: 2px solid rgba(199, 163, 108, 0.3);
+        }
+
+        .thank-you-title {
+            font-size: 20px;
+            color: #c7a36c;
+            margin-bottom: 10px;
+            font-family: 'Fraunces', serif;
+            letter-spacing: 0;
+        }
+
+        .thank-you-info {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .corner-left-top {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-left-bottom {
+            bottom: 0;
+            left: 0;
+        }
+
+        .corner-right-top {
+            top: 0;
+            right: 0;
+        }
+
+        .corner-right-bottom {
+            bottom: 0;
+            right: 0;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="">
+    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="">
+    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="">
+    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="">
+
+    <div class="menu-page">
+        <img src="images/logo.png" alt="Restaurant Edel" class="menu-logo">
+        <h2 class="page-title">Kindermenü • Beilagen • Dessert</h2>
+
+        <div class="menu-content">
+            <h3 class="section-title">Kindermenü</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Hähnchenschnitzel</div>
+                    <div class="item-price">€10,50</div>
+                </div>
+                <div class="item-description">mit Preiselbeermarmelade und Pommes</div>
+                <div class="item-allergens">Allergene: A,C,O</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Spaghetti Bolognese</div>
+                    <div class="item-price">€10,50</div>
+                </div>
+                <div class="item-allergens">Allergene: A,C,L,O</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Mini-Hähnchenburger</div>
+                    <div class="item-price">€10,50</div>
+                </div>
+                <div class="item-description">mit Pommes und Ketchup</div>
+                <div class="item-allergens">Allergene: A,C,O</div>
+            </div>
+
+            <h3 class="section-title">Beilagen</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Pommes frites</div>
+                    <div class="item-price">€4,50</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Reis</div>
+                    <div class="item-price">€4,40</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Petersilienerdäpfel</div>
+                    <div class="item-price">€4,70</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Portion Ketchup / Senf / Mayonnaise</div>
+                    <div class="item-price">€1,40</div>
+                </div>
+            </div>
+
+            <h3 class="section-title">Dessert</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Somlói</div>
+                    <div class="item-price">€7,00</div>
+                </div>
+                <div class="item-description">ungarischer Schichtkuchen</div>
+                <div class="item-allergens">Allergene: A,C,H,G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Strudel</div>
+                    <div class="item-price">€7,00</div>
+                </div>
+                <div class="item-description">mit Äpfeln und Crème Anglaise</div>
+                <div class="item-allergens">Allergene: A,C,G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Crème brûlée</div>
+                    <div class="item-price">€7,00</div>
+                </div>
+                <div class="item-allergens">Allergene: C,G</div>
+            </div>
+
+            <div class="thank-you">
+                <p class="thank-you-title">Vielen Dank für Ihren Besuch</p>
+                <div class="thank-you-info">
+                    Restaurant Edel<br>
+                    Bundesstraße 41, 8077 Gössendorf<br>
+                    +43 676 5809878 • office@restaurant-edel.at
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

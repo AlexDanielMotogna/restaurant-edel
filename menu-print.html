@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Speisekarte</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #2c3e34;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        /* Portada */
+        .cover-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a2e23 0%, #2c4a3a 100%);
+            color: #c7a36c;
+            page-break-after: always;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .cover-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+        .cover-title {
+            font-size: 72px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .cover-subtitle {
+            font-size: 24px;
+            letter-spacing: 4px;
+            font-weight: 300;
+        }
+
+        .cover-divider {
+            width: 150px;
+            height: 2px;
+            background: #c7a36c;
+            margin: 30px auto;
+        }
+
+        /* Páginas de menú */
+        .menu-page {
+            page-break-after: always;
+            padding: 20px 0;
+        }
+
+        .menu-page:last-child {
+            page-break-after: auto;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #c7a36c;
+        }
+
+        .category-title {
+            font-size: 36px;
+            color: #c7a36c;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #c7a36c;
+            margin: 30px 0 15px 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #d4d4d4;
+        }
+
+        .item-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e34;
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .item-description {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        .item-allergens {
+            font-size: 11px;
+            color: #999;
+            margin-top: 3px;
+        }
+
+        .item-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #c7a36c;
+            white-space: nowrap;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        /* Footer en cada página */
+        .page-footer {
+            position: fixed;
+            bottom: 10mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 10px;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .cover-page {
+                background: linear-gradient(135deg, #1a2e23 0%, #2c4a3a 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA -->
+    <div class="cover-page">
+        <img src="images/logo-2.png" alt="Restaurant Edel" class="cover-logo">
+        <div class="cover-divider"></div>
+        <h1 class="cover-title">SPEISEKARTE</h1>
+        <p class="cover-subtitle">Restaurant Edel</p>
+        <div class="cover-divider"></div>
+        <p style="font-size: 16px; margin-top: 30px;">Bundesstraße 41, 8077 Gössendorf</p>
+        <p style="font-size: 14px; margin-top: 10px;">+43 676 5809878</p>
+    </div>
+
+    <!-- SUPPEN & VORSPEISEN -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Suppen & Vorspeisen</h2>
+        </div>
+
+        <h3 class="section-title">Suppen</h3>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Knoblauchcremesuppe</div>
+                <div class="item-allergens">Allergene: G</div>
+            </div>
+            <div class="item-price">€5,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Frittatensuppe</div>
+                <div class="item-allergens">Allergene: A,C,G</div>
+            </div>
+            <div class="item-price">€5,50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Hühnerlebersuppe</div>
+                <div class="item-allergens">Allergene: A,C</div>
+            </div>
+            <div class="item-price">€5,50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Kürbiscremesuppe</div>
+                <div class="item-allergens">Allergene: G,H</div>
+            </div>
+            <div class="item-price">€5,60</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Ungarischer Gulasch mit Schwein und Rind</div>
+                <div class="item-allergens">Allergene: L,A,C</div>
+            </div>
+            <div class="item-price">€7,50</div>
+        </div>
+
+        <h3 class="section-title">Vorspeisen</h3>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Meze-Platte (für 2 Personen)</div>
+                <div class="item-description">Hummus, Rote-Bete-Creme, Babaganoush, Guacamole, Labneh mit Toastbrot</div>
+                <div class="item-allergens">Allergene: G,A</div>
+            </div>
+            <div class="item-price">€17,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Mediterrane Muschelschale mit Speck und Toastbrot</div>
+                <div class="item-allergens">Allergene: A,B</div>
+            </div>
+            <div class="item-price">€16,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Fritto misto</div>
+                <div class="item-description">Tintenfisch, Garnelen, Muscheln, Oktopus, Zucchini</div>
+                <div class="item-allergens">Allergene: B,O,R</div>
+            </div>
+            <div class="item-price">€25,80</div>
+        </div>
+    </div>
+
+    <!-- SALATE -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Salate</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Blattsalat</div>
+            </div>
+            <div class="item-price">€5,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Gemischter Salat</div>
+            </div>
+            <div class="item-price">€6,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Kartoffelsalat</div>
+                <div class="item-allergens">Allergene: C,M</div>
+            </div>
+            <div class="item-price">€5,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Salat mit paniertem Hähnchen</div>
+                <div class="item-allergens">Allergene: A,C,M</div>
+            </div>
+            <div class="item-price">€17,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Caesar-Salat mit gegrilltem Hähnchen</div>
+                <div class="item-allergens">Allergene: A,C,D,M,O</div>
+            </div>
+            <div class="item-price">€17,90</div>
+        </div>
+    </div>
+
+    <!-- KINDERMENÜ -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Kindermenü</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Hähnchenschnitzel mit Preiselbeermarmelade und Pommes</div>
+                <div class="item-allergens">Allergene: A,C,O</div>
+            </div>
+            <div class="item-price">€10,50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Spaghetti Bolognese</div>
+                <div class="item-allergens">Allergene: A,C,L,O</div>
+            </div>
+            <div class="item-price">€10,50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Mini-Hähnchenburger mit Pommes und Ketchup</div>
+                <div class="item-allergens">Allergene: A,C,O</div>
+            </div>
+            <div class="item-price">€10,50</div>
+        </div>
+    </div>
+
+    <!-- HAUPTGERICHTE - VEGAN -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Hauptgerichte - Vegan</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Gemüse-Lasagne</div>
+                <div class="item-allergens">Allergene: A,O</div>
+            </div>
+            <div class="item-price">€17,50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Auberginensalat (Babaganoush) mit Toastbrot</div>
+            </div>
+            <div class="item-price">€8,30</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Panierte Champignons mit Tartarsoße</div>
+                <div class="item-allergens">Allergene: A,O</div>
+            </div>
+            <div class="item-price">€12,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Frühlingsrollen mit Sweet-Chili-Soße</div>
+                <div class="item-allergens">Allergene: O</div>
+            </div>
+            <div class="item-price">€12,90</div>
+        </div>
+    </div>
+
+    <!-- PUI -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Pui</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Pui întreg pane</div>
+                <div class="item-allergens">Alergene: A,C</div>
+            </div>
+            <div class="item-price">€28,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Snițel simplu</div>
+                <div class="item-description">Cu gemish salat</div>
+                <div class="item-allergens">Alergene: A,C</div>
+            </div>
+            <div class="item-price">€16,50</div>
+        </div>
+    </div>
+
+    <!-- PORC -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Porc</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Snițel simplu</div>
+                <div class="item-description">Cu gemish salat</div>
+                <div class="item-allergens">Alergene: A,C</div>
+            </div>
+            <div class="item-price">€17,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Cordon bleu</div>
+                <div class="item-description">Cu gemish salat</div>
+                <div class="item-allergens">Alergene: A,C,G,O</div>
+            </div>
+            <div class="item-price">€18,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Mix grill (pui + porc + cârnat + cartofi prăjiți + legume grill)</div>
+            </div>
+            <div class="item-price">€21,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Medalion cu piure și sos piper sau ciuperei</div>
+                <div class="item-allergens">Alergene: G</div>
+            </div>
+            <div class="item-price">€21,80</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Tomahawk de porc cu cartofi uafter sos ardei copt</div>
+                <div class="item-description">Cu Bratkartoffeln, Paprikasoße und gemischtem Salat</div>
+            </div>
+            <div class="item-price">€23,90</div>
+        </div>
+    </div>
+
+    <!-- VITĂ -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Vită</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Snițel simplu</div>
+                <div class="item-allergens">Alergene: A,C</div>
+            </div>
+            <div class="item-price">€18,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Ribeye steak cu cartofi copți cu trufe</div>
+                <div class="item-description">Salată rucola cherry parmesan, sos piper verde sau cimiucium</div>
+                <div class="item-allergens">Alergene: G</div>
+            </div>
+            <div class="item-price">€29,90</div>
+        </div>
+    </div>
+
+    <!-- PEȘTE -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Pește</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Somon pe piure de mazăre</div>
+                <div class="item-allergens">Alergene: D</div>
+            </div>
+            <div class="item-price">€18,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Caracatiță cu piure linte și cimiucium</div>
+                <div class="item-allergens">Alergene: R</div>
+            </div>
+            <div class="item-price">€29,90</div>
+        </div>
+    </div>
+
+    <!-- PASTE -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Paste</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Carbonara</div>
+                <div class="item-allergens">Alergene: A,C,G,O</div>
+            </div>
+            <div class="item-price">€13,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Bolognese</div>
+                <div class="item-allergens">Alergene: A,C,L,O</div>
+            </div>
+            <div class="item-price">€13,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Frutti di mare</div>
+                <div class="item-allergens">Alergene: A,C,B,R,G</div>
+            </div>
+            <div class="item-price">€17,90</div>
+        </div>
+    </div>
+
+    <!-- BURGER -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Burger</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Smash Burger</div>
+                <div class="item-allergens">Alergene: A,G,M,N</div>
+            </div>
+            <div class="item-price">€12,90</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">EdelBurger</div>
+                <div class="item-allergens">Alergene: A,G,M,N</div>
+            </div>
+            <div class="item-price">€16,90</div>
+        </div>
+    </div>
+
+    <!-- BEILAGEN -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Beilagen</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Pommes frites</div>
+            </div>
+            <div class="item-price">€4,50</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Reis</div>
+            </div>
+            <div class="item-price">€4,40</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Petersilienerdäpfel</div>
+            </div>
+            <div class="item-price">€4,70</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Portion Ketchup / Senf / Mayonnaise</div>
+            </div>
+            <div class="item-price">€1,40</div>
+        </div>
+    </div>
+
+    <!-- DESERT -->
+    <div class="menu-page">
+        <div class="category-header">
+            <h2 class="category-title">Desert</h2>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Șomloi</div>
+                <div class="item-allergens">Alergene: A,C,H,G</div>
+            </div>
+            <div class="item-price">€7,00</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Strudel cu mere și creme angle</div>
+                <div class="item-allergens">Alergene: A,C,G</div>
+            </div>
+            <div class="item-price">€7,00</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-details">
+                <div class="item-name">Creme brulle</div>
+                <div class="item-allergens">Alergene: C,G</div>
+            </div>
+            <div class="item-price">€7,00</div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        Restaurant Edel • Bundesstraße 41, 8077 Gössendorf • +43 676 5809878 • office@restaurant-edel.at
+    </div>
+
+</body>
+</html>

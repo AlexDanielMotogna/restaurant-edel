@@ -157,17 +157,15 @@ if($('.main-header').length){
 	//Banner Carousel
 	if ($('.banner-slider').length) {
 		var swiper = new Swiper('.banner-slider', {
-			autoplay: true,
+			autoplay: false,
 			autoplaySpeed: 20000,
 			effect: "fade",
-			speed: 1000,		
+			speed: 1000,
 			margin: 0,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			loop: true,
-			autoplay: {
-	        delay: 7000
-	      },
+			loop: false,
+			autoplay: false,
 	      navigation: {
 	        nextEl: '.swiper-button-next',
 	        prevEl: '.swiper-button-prev',

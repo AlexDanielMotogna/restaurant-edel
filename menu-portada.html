@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Speisekarte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #ffffff;
+            background: #18312e;
+            line-height: 1.6;
+        }
+
+        .cover-page {
+            width: 210mm;
+            height: 297mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #18312e;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .cover-logo {
+            width: 250px;
+            height: auto;
+            margin-bottom: 60px;
+        }
+
+        .cover-title {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            color: #c7a36c;
+            text-transform: uppercase;
+        }
+
+        .cover-divider {
+            width: 200px;
+            height: 2px;
+            background: #c7a36c;
+            margin: 40px auto;
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            letter-spacing: 3px;
+            color: #c7a36c;
+            font-weight: 300;
+        }
+
+        .cover-info {
+            margin-top: 80px;
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            line-height: 2;
+        }
+
+        .menu-image-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 400px;
+            margin: 30px 0;
+        }
+
+        .menu-image {
+            display: block;
+            border-radius: 300px 300px 0 0;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 2 / 1;
+        }
+
+        .menu-image-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #c7a36c;
+            border-radius: 300px 300px 0 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .corner-left-top {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-left-bottom {
+            bottom: 0;
+            left: 0;
+        }
+
+        .corner-right-top {
+            top: 0;
+            right: 0;
+        }
+
+        .corner-right-bottom {
+            bottom: 0;
+            right: 0;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="">
+    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="">
+    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="">
+    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="">
+
+    <div class="cover-page">
+        <img src="images/logo.png" alt="Restaurant Edel" class="cover-logo">
+
+        <div class="menu-image-wrapper">
+            <img src="images/resource/menus-2.jpg" alt="Restaurant Edel Speisen" class="menu-image">
+        </div>
+
+        <div class="cover-divider"></div>
+        <h1 class="cover-title">SPEISEKARTE</h1>
+        <p class="cover-subtitle">Restaurant Edel</p>
+        <div class="cover-divider"></div>
+        <div class="cover-info">
+            Bundesstraße 41<br>
+            8077 Gössendorf, Österreich<br>
+            +43 676 5809878<br>
+            office@restaurant-edel.at
+        </div>
+    </div>
+
+</body>
+</html>

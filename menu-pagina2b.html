@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Hauptgerichte (Fortsetzung)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #ffffff;
+            background: #18312e;
+            line-height: 1.6;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #18312e;
+            position: relative;
+            padding: 25px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-logo {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .page-title {
+            font-family: 'Fraunces', serif;
+            font-size: 24px;
+            color: #c7a36c;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            margin-top: 80px;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #c7a36c;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 16px;
+            color: #c7a36c;
+            margin: 12px 0 6px 0;
+            font-weight: 600;
+            letter-spacing: 0;
+            text-transform: capitalize;
+        }
+
+        .menu-item {
+            margin-bottom: 6px;
+            padding-bottom: 4px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+            line-height: 14px;
+            position: relative;
+        }
+
+        .item-name {
+            font-size: 12px;
+            font-weight: 400;
+            color: #ffffff;
+            padding-right: 8px;
+            text-transform: uppercase;
+            background: #18312e;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-header::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-bottom: 1px dotted rgba(199, 163, 108, 0.4);
+            z-index: 0;
+        }
+
+        .item-price {
+            font-size: 12px;
+            font-weight: 600;
+            color: #c7a36c;
+            white-space: nowrap;
+            padding-left: 8px;
+            background: #18312e;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-description {
+            font-size: 10px;
+            color: rgba(255,255,255,0.7);
+            font-style: normal;
+            margin-top: 1px;
+            line-height: 1.3;
+        }
+
+        .item-allergens {
+            font-size: 9px;
+            color: rgba(199, 163, 108, 0.7);
+            margin-top: 1px;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .corner-left-top {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-left-bottom {
+            bottom: 0;
+            left: 0;
+        }
+
+        .corner-right-top {
+            top: 0;
+            right: 0;
+        }
+
+        .corner-right-bottom {
+            bottom: 0;
+            right: 0;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="">
+    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="">
+    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="">
+    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="">
+
+    <div class="menu-page">
+        <img src="images/logo.png" alt="Restaurant Edel" class="menu-logo">
+        <h2 class="page-title">Hauptgerichte</h2>
+
+        <div class="menu-content">
+            <h3 class="section-title">Vegan</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Gemüse-Lasagne</div>
+                    <div class="item-price">€17,50</div>
+                </div>
+                <div class="item-allergens">Allergene: A,O</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Auberginensalat (Babaganoush)</div>
+                    <div class="item-price">€8,30</div>
+                </div>
+                <div class="item-description">mit Toastbrot</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Panierte Champignons</div>
+                    <div class="item-price">€12,90</div>
+                </div>
+                <div class="item-description">mit Tartarsoße</div>
+                <div class="item-allergens">Allergene: A,O</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Frühlingsrollen</div>
+                    <div class="item-price">€12,90</div>
+                </div>
+                <div class="item-description">mit Sweet-Chili-Soße</div>
+                <div class="item-allergens">Allergene: O</div>
+            </div>
+
+            <h3 class="section-title">Fisch</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Lachs auf Erbsenpüree</div>
+                    <div class="item-price">€18,90</div>
+                </div>
+                <div class="item-allergens">Allergene: D</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Oktopus</div>
+                    <div class="item-price">€29,90</div>
+                </div>
+                <div class="item-description">mit Linsenpüree und Chimichurri</div>
+                <div class="item-allergens">Allergene: R</div>
+            </div>
+
+            <h3 class="section-title">Pasta</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Carbonara</div>
+                    <div class="item-price">€13,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A,C,G,O</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Bolognese</div>
+                    <div class="item-price">€13,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A,C,L,O</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Frutti di mare</div>
+                    <div class="item-price">€17,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A,C,B,R,G</div>
+            </div>
+
+            <h3 class="section-title">Burger</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Smash Burger</div>
+                    <div class="item-price">€12,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A,G,M,N</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">EdelBurger</div>
+                    <div class="item-price">€16,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A,G,M,N</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
