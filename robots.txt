@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alexdanielmotogna.github.io/restaurant-edel/sitemap.xml
+
+# Disallow
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+
+# Allow important pages
+Allow: /index.html
+Allow: /images/
+
+# Crawl-delay
+Crawl-delay: 1
