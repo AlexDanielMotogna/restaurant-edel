@@ -23,6 +23,9 @@
 <meta property="og:title" content="Edel Restaurant Gössendorf | Restaurant Edel Steiermark">
 <meta property="og:description" content="Restaurant Edel - Genießen Sie bei Edel köstliche österreichische und internationale Küche. Täglich frisches Mittagsmenü ab €12,90. Jetzt im Restaurant Edel reservieren!">
 <meta property="og:image" content="https://alexdanielmotogna.github.io/restaurant-edel/images/logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Restaurant Edel Logo">
 <meta property="og:locale" content="de_AT">
 <meta property="og:site_name" content="Restaurant Edel">
 
@@ -38,8 +41,12 @@
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+
+<!-- Favicons para Google -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/browserIcon.png">
 <link rel="shortcut icon" href="images/browserIcon.png" type="image/x-icon">
-<link rel="icon" href="images/browserIcon.png" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +59,17 @@
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Restaurant Edel",
-  "image": "https://alexdanielmotogna.github.io/restaurant-edel/images/logo.png",
+  "alternateName": "Edel",
+  "image": [
+    "https://alexdanielmotogna.github.io/restaurant-edel/images/logo.png",
+    "https://alexdanielmotogna.github.io/restaurant-edel/images/favicon.png"
+  ],
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://alexdanielmotogna.github.io/restaurant-edel/images/logo.png",
+    "width": 512,
+    "height": 512
+  },
   "description": "Restaurant Edel bietet österreichische und internationale Küche in Gössendorf. Täglich frisches Mittagsmenü, vegane und vegetarische Optionen verfügbar.",
   "address": {
     "@type": "PostalAddress",
