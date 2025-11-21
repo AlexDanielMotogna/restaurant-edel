@@ -1187,9 +1187,11 @@ body.visible-sidebar {
     top repeat;
   padding-top: 100px;
   padding-bottom: 50px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-bar .inner-box .cross-icon {
@@ -1216,11 +1218,14 @@ body.visible-sidebar {
   position: relative;
   line-height: 50px;
   margin-bottom: 35px;
+  text-align: center;
 }
 
 .info-bar .inner-box .logo-box img {
   position: relative;
   max-height: 80px;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .info-bar .inner-box .image-box {
@@ -1229,12 +1234,14 @@ body.visible-sidebar {
   margin: 0 auto;
   margin-bottom: 45px;
   border-radius: 300px 300px 0 0;
-  display: inline-block;
+  display: block;
+  text-align: center;
 }
 
 .info-bar .inner-box .image-box img {
   position: relative;
-  display: block;
+  display: inline-block;
+  margin: 0 auto;
   width: 100%;
   border-radius: 300px 300px 0 0;
 }
@@ -7164,7 +7171,8 @@ html:not(.body-menu-opened) .hamburger .bottom-bun {
 
 /* Mejoras para el sidebar info-bar */
 .info-bar .inner-box {
-  padding: 40px 30px;
+
+  text-align: center;
 }
 
 .info-bar .info li {
