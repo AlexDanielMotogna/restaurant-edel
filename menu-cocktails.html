@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Signature Cocktail Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #ffffff;
+            background: #18312e;
+            line-height: 1.4;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #18312e;
+            position: relative;
+            padding: 25px 30px;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c7a36c;
+        }
+
+        .menu-logo {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .menu-title {
+            font-family: 'Fraunces', serif;
+            font-size: 32px;
+            color: #c7a36c;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .menu-subtitle {
+            font-size: 16px;
+            color: rgba(199, 163, 108, 0.9);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            flex: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category {
+            margin-bottom: 16px;
+        }
+
+        .category-title {
+            font-family: 'Fraunces', serif;
+            font-size: 15px;
+            color: #c7a36c;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(199, 163, 108, 0.4);
+        }
+
+        .category-icon {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        .cocktail-item {
+            margin-bottom: 12px;
+        }
+
+        .cocktail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .cocktail-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .cocktail-price {
+            font-size: 12px;
+            font-weight: 700;
+            color: #c7a36c;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        .cocktail-ingredients {
+            font-size: 10px;
+            color: rgba(199, 163, 108, 0.9);
+            margin-bottom: 2px;
+            font-style: italic;
+        }
+
+        .cocktail-description {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.3;
+        }
+
+        .simple-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+            font-size: 11px;
+        }
+
+        .simple-name {
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+        .simple-price {
+            color: #c7a36c;
+            font-weight: 600;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+
+        .menu-footer {
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 2px solid #c7a36c;
+            font-size: 9px;
+            line-height: 1.6;
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            color: #c7a36c;
+            font-size: 11px;
+            margin-bottom: 6px;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            z-index: 10;
+        }
+
+        .corner-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-top-right {
+            top: 0;
+            right: 0;
+        }
+
+        .corner-bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .corner-bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-page">
+        <img src="images/background/top-left.png" class="corner-decoration corner-top-left" alt="">
+        <img src="images/background/top-right.png" class="corner-decoration corner-top-right" alt="">
+        <img src="images/background/bottom-left.png" class="corner-decoration corner-bottom-left" alt="">
+        <img src="images/background/bottom-right.png" class="corner-decoration corner-bottom-right" alt="">
+
+        <div class="menu-header">
+            <img src="images/logo.png" alt="Restaurant Edel" class="menu-logo">
+            <h1 class="menu-title">Cocktail Menu</h1>
+            <p class="menu-subtitle">Signature Cocktails</p>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="column">
+                <!-- EDEL'S SIGNATURES -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Edel's Signatures</h3>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Happy Strawberry</span>
+                            <span class="cocktail-price">€12,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Vodka · Strawberry syrup · Lemon twist · Mint · Sparkling water</div>
+                        <div class="cocktail-description">The house favorite</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Appletini</span>
+                            <span class="cocktail-price">€12,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Vodka · Natural apple juice · Lemon · Triple sec · Fresh apple</div>
+                        <div class="cocktail-description">A refreshing fruit forward classic</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Chocolate Tini</span>
+                            <span class="cocktail-price">€12,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Vodka · Chocolate liqueur · Cream · Chocolate shavings</div>
+                        <div class="cocktail-description">Decadent, creamy, and indulgent — a luxurious dessert-style cocktail</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Mojito</span>
+                            <span class="cocktail-price">€12,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">White rum · Fresh mint · Lime · Raw sugar · Soda water</div>
+                        <div class="cocktail-description">Refreshing, vibrant, and timeless — a cozy modern classic</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Classic Margarita</span>
+                            <span class="cocktail-price">€12,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Tequila · Triple sec · Lime juice · Salt rim</div>
+                        <div class="cocktail-description">A bold, zesty classic with a clean, modern finish</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Pineapple Mint Daiquiri</span>
+                            <span class="cocktail-price">€12,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">White rum · Fresh pineapple · Mint · Lime · Sugar</div>
+                        <div class="cocktail-description">Tropical, bright, and cooling — a modern twist on a classic</div>
+                    </div>
+                </div>
+
+                <!-- PROSECCO COCKTAILS -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Prosecco Cocktails</h3>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Garden Hugo</span>
+                            <span class="cocktail-price">€10,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Prosecco · Elderflower · Mint · Lime</div>
+                        <div class="cocktail-description">Fresh, floral, and modern — light and cozy</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Golden Bellini</span>
+                            <span class="cocktail-price">€10,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Prosecco · Peach purée · Vanilla essence</div>
+                        <div class="cocktail-description">Soft, creamy, and luxurious with a warm golden finish</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Mimosa</span>
+                            <span class="cocktail-price">€8,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Prosecco · Fresh orange juice</div>
+                        <div class="cocktail-description">Bright, classic, and effortlessly elegant</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Aperol Spritz</span>
+                            <span class="cocktail-price">€10,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Prosecco · Aperol · Soda · Orange slice</div>
+                        <div class="cocktail-description">Bright, refreshing, and timeless — a modern classic</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Limoncello Spritz</span>
+                            <span class="cocktail-price">€10,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Prosecco · Limoncello · Soda · Lemon slice</div>
+                        <div class="cocktail-description">Bright, zesty, and refreshing — Italian elegance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="column">
+                <!-- GIN COCKTAILS -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Gin Cocktails</h3>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Classic Gin & Tonic</span>
+                            <span class="cocktail-price">€11,00</span>
+                        </div>
+                        <div class="cocktail-ingredients">Hendrick's Gin · Premium tonic · Cucumber · Lime twist</div>
+                        <div class="cocktail-description">Crisp, aromatic, and perfectly balanced</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Lady in Pink</span>
+                            <span class="cocktail-price">€11,00</span>
+                        </div>
+                        <div class="cocktail-ingredients">Gin · Pink grapefruit · Lemon · Simple syrup · Soda</div>
+                        <div class="cocktail-description">Fruity, vibrant, and visually striking</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Gin Fizz</span>
+                            <span class="cocktail-price">€11,00</span>
+                        </div>
+                        <div class="cocktail-ingredients">Gin · Lemon juice · Simple syrup · Soda · Rosemary sprig</div>
+                        <div class="cocktail-description">Light, bubbly, and aromatic — a timeless classic</div>
+                    </div>
+                </div>
+
+                <!-- SIMPLE VODKA CLASSICS -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Simple Vodka Classics</h3>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Vodka Soda</span>
+                            <span class="cocktail-price">€9,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Vodka · Soda water · Lemon or lime</div>
+                        <div class="cocktail-description">Light, bubbly, and elegant — the ultimate clean cocktail</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Screwdriver</span>
+                            <span class="cocktail-price">€9,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Vodka · Fresh orange juice</div>
+                        <div class="cocktail-description">Simple, bright, and classic</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Vodka Cranberry</span>
+                            <span class="cocktail-price">€9,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Vodka · Cranberry juice · Lime wedge</div>
+                        <div class="cocktail-description">Fruity, balanced, and easy to enjoy</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Lemon Vodka Fizz</span>
+                            <span class="cocktail-price">€9,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Vodka · Lemon juice · Simple syrup · Soda</div>
+                        <div class="cocktail-description">Zesty, sparkling, and refreshing</div>
+                    </div>
+                </div>
+
+                <!-- NON-ALCOHOLIC COCKTAILS -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Non-Alcoholic Cocktails</h3>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Apple Fizz</span>
+                            <span class="cocktail-price">€6,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Apple juice · Lemon · Soda · Mint</div>
+                        <div class="cocktail-description">Crisp, fruity, and refreshing</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Berry Sparkler</span>
+                            <span class="cocktail-price">€6,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Mixed berry purée · Lemon · Soda</div>
+                        <div class="cocktail-description">Fruity, vibrant, and elegant</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Lemon Ginger Fizz</span>
+                            <span class="cocktail-price">€6,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Lemon juice · Ginger syrup · Soda</div>
+                        <div class="cocktail-description">Zesty, slightly spicy, and refreshing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEGUNDA PÁGINA -->
+    <div class="menu-page">
+        <img src="images/background/top-left.png" class="corner-decoration corner-top-left" alt="">
+        <img src="images/background/top-right.png" class="corner-decoration corner-top-right" alt="">
+        <img src="images/background/bottom-left.png" class="corner-decoration corner-bottom-left" alt="">
+        <img src="images/background/bottom-right.png" class="corner-decoration corner-bottom-right" alt="">
+
+        <div class="menu-header">
+            <img src="images/logo.png" alt="Restaurant Edel" class="menu-logo">
+            <h1 class="menu-title">Cocktail Menu</h1>
+            <p class="menu-subtitle">Signature Cocktails</p>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="column">
+                <!-- SIMPLE WHISKEY DRINKS -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Simple Whiskey Drinks</h3>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Whiskey & Soda</span>
+                            <span class="cocktail-price">€11,00</span>
+                        </div>
+                        <div class="cocktail-ingredients">Whiskey · Soda water · Lemon wedge</div>
+                        <div class="cocktail-description">Light, refreshing, and simple</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Whiskey & Ginger</span>
+                            <span class="cocktail-price">€11,00</span>
+                        </div>
+                        <div class="cocktail-ingredients">Whiskey · Ginger ale · Lime wedge</div>
+                        <div class="cocktail-description">Slightly spicy and bubbly — a classic favorite</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Whiskey & Cola</span>
+                            <span class="cocktail-price">€11,00</span>
+                        </div>
+                        <div class="cocktail-ingredients">Whiskey · Cola · Ice</div>
+                        <div class="cocktail-description">Sweet, smooth, and easy to enjoy</div>
+                    </div>
+
+                    <div class="cocktail-item">
+                        <div class="cocktail-header">
+                            <span class="cocktail-name">Straight / On the Rocks</span>
+                            <span class="cocktail-price">€8,50</span>
+                        </div>
+                        <div class="cocktail-ingredients">Whiskey neat or over ice</div>
+                        <div class="cocktail-description">Pure, elegant, and robust — for true connoisseurs</div>
+                    </div>
+                </div>
+
+                <!-- REGULAR DRINKS -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Soft Drinks</h3>
+
+                    <div class="simple-item">
+                        <span class="simple-name">Coca-Cola / Coca-Cola Zero</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Fanta / Sprite</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Tonic Water / Soda / Ginger Ale</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Mineral Water (Still / Sparkling)</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Juices</h3>
+
+                    <div class="simple-item">
+                        <span class="simple-name">Orange Juice</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Apple Juice</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Cranberry Juice</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Peach Nektar</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Pineapple Juice</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Fructada</span>
+                        <span class="simple-price">€4,00</span>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Hot Drinks</h3>
+
+                    <div class="simple-item">
+                        <span class="simple-name">Espresso</span>
+                        <span class="simple-price">€3,50</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Cappuccino</span>
+                        <span class="simple-price">€3,50</span>
+                    </div>
+                    <div class="simple-item">
+                        <span class="simple-name">Latte Macchiato</span>
+                        <span class="simple-price">€3,50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="column">
+                <div style="text-align: center; padding: 60px 20px 40px 20px;">
+                    <img src="images/logo.png" alt="Restaurant Edel" style="width: 180px; margin-bottom: 30px; opacity: 0.8;">
+                    <p style="font-family: 'Fraunces', serif; font-size: 20px; color: #c7a36c; line-height: 1.6; margin-bottom: 20px;">
+                        Genießen Sie unsere<br>
+                        erlesene Auswahl<br>
+                        an Getränken
+                    </p>
+                    <p style="font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-top: 30px;">
+                        Alle Preise verstehen sich in Euro<br>
+                        und beinhalten die gesetzliche Mehrwertsteuer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-footer">
+            <p class="footer-name">Restaurant Edel</p>
+            <p>Bundesstraße 41, 8077 Gössendorf</p>
+            <p><strong style="color: #c7a36c;">Tel:</strong> +43 676 5809878 | <strong style="color: #c7a36c;">E-Mail:</strong> office@restaurant-edel.at</p>
+            <p style="margin-top: 4px; font-size: 8px; color: rgba(255,255,255,0.7);">www.restaurant-edel.at</p>
+        </div>
+    </div>
+
+</body>
+</html>

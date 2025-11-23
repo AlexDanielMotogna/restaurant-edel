@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Allergenkennzeichnung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #ffffff;
+            background: #18312e;
+            line-height: 1.4;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #18312e;
+            position: relative;
+            padding: 25px 30px;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c7a36c;
+        }
+
+        .menu-logo {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .menu-title {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            color: #c7a36c;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .menu-subtitle {
+            font-size: 14px;
+            color: rgba(199, 163, 108, 0.9);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            color: #c7a36c;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .allergen-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .allergen-table th {
+            background-color: rgba(199, 163, 108, 0.2);
+            color: #c7a36c;
+            padding: 10px 8px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(199, 163, 108, 0.4);
+            text-align: left;
+        }
+
+        .allergen-table td {
+            padding: 8px;
+            font-size: 11px;
+            border: 1px solid rgba(199, 163, 108, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        .allergen-table td:first-child {
+            font-weight: 600;
+            color: #c7a36c;
+            text-align: center;
+            width: 50px;
+            font-size: 13px;
+        }
+
+        .allergen-table td:nth-child(2) {
+            width: 35%;
+        }
+
+        .allergen-note {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(199, 163, 108, 0.1);
+            border-left: 3px solid #c7a36c;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            z-index: 10;
+        }
+
+        .corner-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-top-right {
+            top: 0;
+            right: 0;
+        }
+
+        .corner-bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .corner-bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        .menu-footer {
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 2px solid #c7a36c;
+            font-size: 9px;
+            line-height: 1.6;
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            color: #c7a36c;
+            font-size: 11px;
+            margin-bottom: 6px;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-page">
+        <img src="images/background/top-left.png" class="corner-decoration corner-top-left" alt="">
+        <img src="images/background/top-right.png" class="corner-decoration corner-top-right" alt="">
+        <img src="images/background/bottom-left.png" class="corner-decoration corner-bottom-left" alt="">
+        <img src="images/background/bottom-right.png" class="corner-decoration corner-bottom-right" alt="">
+
+        <div class="menu-header">
+            <img src="images/logo.png" alt="Restaurant Edel" class="menu-logo">
+            <h1 class="menu-title">Allergenkennzeichnung</h1>
+            <p class="menu-subtitle">Allergen Labeling - Austria / Romania</p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2 class="section-title">Allergenkennzeichnung - Österreich</h2>
+
+            <table class="allergen-table">
+                <thead>
+                    <tr>
+                        <th>Kürzel</th>
+                        <th>Allergen</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>Glutenhaltiges Getreide</td>
+                        <td>Weizen, Roggen, Gerste, Hafer, Dinkel, Kamut oder deren Hybridstämme</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>Krebstiere</td>
+                        <td>Krebstiere und daraus gewonnene Erzeugnisse (z.B. Garnelen, Krabben, Hummer, Langusten)</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>Eier</td>
+                        <td>Eier und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>Fisch</td>
+                        <td>Fische und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>Erdnüsse</td>
+                        <td>Erdnüsse und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>Soja</td>
+                        <td>Sojabohnen und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>Milch / Laktose</td>
+                        <td>Milch und daraus gewonnene Erzeugnisse (einschließlich Laktose)</td>
+                    </tr>
+                    <tr>
+                        <td>H</td>
+                        <td>Schalenfrüchte</td>
+                        <td>Mandeln, Haselnüsse, Walnüsse, Cashewnüsse, Pecannüsse, Paranüsse, Pistazien, Macadamianüsse</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>Sellerie</td>
+                        <td>Sellerie und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>Senf</td>
+                        <td>Senf und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>N</td>
+                        <td>Sesamsamen</td>
+                        <td>Sesamsamen und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td>Schwefeldioxid / Sulfite</td>
+                        <td>Schwefeldioxid und Sulfite in Konzentrationen von mehr als 10 mg/kg oder 10 mg/l</td>
+                    </tr>
+                    <tr>
+                        <td>P</td>
+                        <td>Lupinen</td>
+                        <td>Lupinen und daraus gewonnene Erzeugnisse</td>
+                    </tr>
+                    <tr>
+                        <td>R</td>
+                        <td>Weichtiere</td>
+                        <td>Weichtiere und daraus gewonnene Erzeugnisse (z.B. Schnecken, Muscheln, Tintenfische)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="allergen-note">
+                <p style="margin-bottom: 10px;"><strong>Information über Allergene erhalten Sie auf Nachfrage bei unserem Servicepersonal.</strong></p>
+                <p>Allergene: A = Gluten, B = Krebstiere, C = Ei, D = Fisch, E = Erdnüsse, F = Soja, G = Milch, H = Schalenfrüchte, L = Sellerie, M = Senf, N = Sesam, O = Sulfite, P = Lupinen, R = Weichtiere.</p>
+            </div>
+        </div>
+
+        <div class="menu-footer">
+            <p class="footer-name">Restaurant Edel</p>
+            <p>Bundesstraße 41, 8077 Gössendorf</p>
+            <p><strong style="color: #c7a36c;">Tel:</strong> +43 676 5809878 | <strong style="color: #c7a36c;">E-Mail:</strong> office@restaurant-edel.at</p>
+            <p style="margin-top: 4px; font-size: 8px; color: rgba(255,255,255,0.7);">www.restaurant-edel.at</p>
+        </div>
+    </div>
+
+</body>
+</html>

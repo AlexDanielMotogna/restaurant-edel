@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Getränkekarte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #ffffff;
+            background: #18312e;
+            line-height: 1.4;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #18312e;
+            position: relative;
+            padding: 25px 30px;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c7a36c;
+        }
+
+        .menu-logo {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .menu-title {
+            font-family: 'Fraunces', serif;
+            font-size: 36px;
+            color: #c7a36c;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .menu-subtitle {
+            font-size: 14px;
+            color: rgba(199, 163, 108, 0.8);
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category {
+            margin-bottom: 18px;
+        }
+
+        .category-title {
+            font-family: 'Fraunces', serif;
+            font-size: 16px;
+            color: #c7a36c;
+            margin-bottom: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(199, 163, 108, 0.3);
+        }
+
+        .category-icon {
+            margin-right: 8px;
+            font-size: 14px;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            color: #c7a36c;
+            font-weight: 600;
+        }
+
+        .drink-item {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .drink-name {
+            font-size: 12px;
+            color: #ffffff;
+            font-weight: 400;
+            flex: 1;
+        }
+
+        .drink-size {
+            font-size: 11px;
+            color: rgba(199, 163, 108, 0.8);
+            margin-left: 8px;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .drink-price {
+            font-size: 12px;
+            font-weight: 600;
+            color: #c7a36c;
+            min-width: 60px;
+            text-align: right;
+            margin-left: 10px;
+        }
+
+        .drink-subitem {
+            margin-left: 15px;
+            font-size: 11px;
+        }
+
+        .drink-note {
+            font-size: 8px;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .menu-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #c7a36c;
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            color: #c7a36c;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            z-index: 10;
+        }
+
+        .corner-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-top-right {
+            top: 0;
+            right: 0;
+        }
+
+        .corner-bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .corner-bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-page">
+        <img src="images/background/top-left.png" class="corner-decoration corner-top-left" alt="">
+        <img src="images/background/top-right.png" class="corner-decoration corner-top-right" alt="">
+        <img src="images/background/bottom-left.png" class="corner-decoration corner-bottom-left" alt="">
+        <img src="images/background/bottom-right.png" class="corner-decoration corner-bottom-right" alt="">
+
+        <div class="menu-header">
+            <img src="images/logo.png" alt="Restaurant Edel" class="menu-logo">
+            <h1 class="menu-title">Getränkekarte</h1>
+            <p class="menu-subtitle">Drinks Menu</p>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="column">
+                <!-- KAFFEE / TEE -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Kaffee / Tee</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Espresso</span>
+                        <span class="drink-price">€3,10</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Doppelte Espresso</span>
+                        <span class="drink-price">€4,60</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Verlängert</span>
+                        <span class="drink-price">€3,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Cappuccino</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Latte</span>
+                        <span class="drink-price">€4,00</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Latte mit Geschmack</span>
+                        <span class="drink-price">€4,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Melange</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                </div>
+
+                <!-- SOFTGETRÄNKE -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Softgetränke</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Cola, Fanta, Sprite, Cola Zero, Frucade, Almdudler</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,33l</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l gesp.</span>
+                        <span class="drink-price">€4,50</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,3l gesp.</span>
+                        <span class="drink-price">€3,70</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l Leit.</span>
+                        <span class="drink-price">€4,30</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,3l Leit.</span>
+                        <span class="drink-price">€3,50</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 10px;">
+                        <span class="drink-name">Eistee Pfirsich/Zitrone</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Red Bull (Flasche)</span>
+                        <span class="drink-price">€4,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Tonic Water</span>
+                        <span class="drink-size">0,2l</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Ginger Ale</span>
+                        <span class="drink-size">0,2l</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Bitter Lemon</span>
+                        <span class="drink-size">0,2l</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                </div>
+
+                <!-- MINERALWASSER -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Mineralwasser</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Leitungswasser</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€1,50</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 8px;">
+                        <span class="drink-name">Soda</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€2,70</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,3l</span>
+                        <span class="drink-price">€2,20</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 8px;">
+                        <span class="drink-name">Soda Zitrone</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€3,70</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,3l</span>
+                        <span class="drink-price">€3,00</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 8px;">
+                        <span class="drink-name">Gespritzt</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€4,50</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,3l</span>
+                        <span class="drink-price">€4,10</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 8px;">
+                        <span class="drink-name">Römerquelle prickelnd</span>
+                        <span class="drink-size">0,3l</span>
+                        <span class="drink-price">€3,30</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,7l</span>
+                        <span class="drink-price">€5,90</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 8px;">
+                        <span class="drink-name">Römerquelle Still</span>
+                        <span class="drink-size">0,3l</span>
+                        <span class="drink-price">€3,30</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,7l</span>
+                        <span class="drink-price">€5,90</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="column">
+                <!-- BIER -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Bier</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Puntigamer vom Fass</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€4,90</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,3l</span>
+                        <span class="drink-price">€4,10</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,2l</span>
+                        <span class="drink-price">€3,20</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 8px;">
+                        <span class="drink-name">Puntigamer Flasche</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€5,10</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 10px;">
+                        <span class="drink-name">Gösser vom Fass</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€5,10</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,3l</span>
+                        <span class="drink-price">€4,20</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,2l</span>
+                        <span class="drink-price">€3,30</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 8px;">
+                        <span class="drink-name">Gösser Natur Gold alkoholfrei</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€5,10</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 10px;">
+                        <span class="drink-name">Edelweiss</span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€5,10</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Corona</span>
+                        <span class="drink-price">€4,90</span>
+                    </div>
+                </div>
+
+                <!-- SÄFTE -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Säfte</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Apfelsaft</span>
+                        <span class="drink-size">0,25l</span>
+                        <span class="drink-price">€2,70</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€4,80</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">1,0l</span>
+                        <span class="drink-price">€8,10</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,25l gesp.</span>
+                        <span class="drink-price">€2,50</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l gesp.</span>
+                        <span class="drink-price">€4,50</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,25l Leit.</span>
+                        <span class="drink-price">€2,50</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l Leit.</span>
+                        <span class="drink-price">€4,50</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 10px;">
+                        <span class="drink-name">Pfirsich Nektar</span>
+                        <span class="drink-size">0,25l</span>
+                        <span class="drink-price">€2,90</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€5,00</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">1,0l</span>
+                        <span class="drink-price">€8,50</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,25l gesp.</span>
+                        <span class="drink-price">€2,70</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l gesp.</span>
+                        <span class="drink-price">€5,60</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,25l Leit.</span>
+                        <span class="drink-price">€2,60</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l Leit.</span>
+                        <span class="drink-price">€5,40</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 10px;">
+                        <span class="drink-name">Apfel-Johannisbeeren</span>
+                        <span class="drink-size">0,25l</span>
+                        <span class="drink-price">€2,80</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l</span>
+                        <span class="drink-price">€4,90</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">1,0l</span>
+                        <span class="drink-price">€8,20</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,25l gesp.</span>
+                        <span class="drink-price">€2,70</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l gesp.</span>
+                        <span class="drink-price">€4,80</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,25l Leit.</span>
+                        <span class="drink-price">€2,60</span>
+                    </div>
+                    <div class="drink-item drink-subitem">
+                        <span class="drink-name"></span>
+                        <span class="drink-size">0,5l Leit.</span>
+                        <span class="drink-price">€5,30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PÁGINA 2: Continuar con más bebidas -->
+    </div>
+
+    <!-- SEGUNDA PÁGINA -->
+    <div class="menu-page">
+        <img src="images/background/top-left.png" class="corner-decoration corner-top-left" alt="">
+        <img src="images/background/top-right.png" class="corner-decoration corner-top-right" alt="">
+        <img src="images/background/bottom-left.png" class="corner-decoration corner-bottom-left" alt="">
+        <img src="images/background/bottom-right.png" class="corner-decoration corner-bottom-right" alt="">
+
+        <div class="menu-header">
+            <img src="images/logo.png" alt="Restaurant Edel" class="menu-logo">
+            <h1 class="menu-title">Getränkekarte</h1>
+            <p class="menu-subtitle">Drinks Menu</p>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="column">
+                <!-- SPIRITUOSEN & LONGDRINKS -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Spirituosen & Longdrinks</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Gin Tonic</span>
+                        <span class="drink-price">€5,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Whisky Cola</span>
+                        <span class="drink-price">€5,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Bacardi Cola</span>
+                        <span class="drink-price">€5,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Vodka Orange</span>
+                        <span class="drink-price">€5,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Whisky Red Bull</span>
+                        <span class="drink-price">€5,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Vodka Lemon</span>
+                        <span class="drink-price">€5,50</span>
+                    </div>
+
+                    <div class="drink-item" style="margin-top: 10px;">
+                        <span class="drink-name">Aperol Spritz Veneziano</span>
+                        <span class="drink-price">€5,60</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Hugo</span>
+                        <span class="drink-price">€5,40</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Averna</span>
+                        <span class="drink-price">€3,70</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Martini Bianco</span>
+                        <span class="drink-price">€3,80</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Campari</span>
+                        <span class="drink-price">€3,50</span>
+                    </div>
+                </div>
+
+                <!-- WEINSPRITZER -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Weinspritzer</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Weiße Spritzer</span>
+                        <span class="drink-price">€3,50</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Almdudler-Weiß</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Spritzer diverse Geschmack</span>
+                        <span class="drink-price">€3,90</span>
+                    </div>
+                    <div class="drink-note" style="margin-left: 15px;">
+                        (Erdbeeren, Holunder, Kiwi, Gurke, Mango)
+                    </div>
+                </div>
+
+                <!-- COCKTAILS MIT ALKOHOL -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Cocktails mit Alkohol</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Mojito</span>
+                        <span class="drink-price">€8,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Pina Colada</span>
+                        <span class="drink-price">€8,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Cuba Libre</span>
+                        <span class="drink-price">€8,90</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="column">
+                <!-- COCKTAILS OHNE ALKOHOL -->
+                <div class="category">
+                    <h3 class="category-title"><span class="category-icon">◆</span> Cocktails ohne Alkohol</h3>
+                    <div class="drink-item">
+                        <span class="drink-name">Virgin Mojito</span>
+                        <span class="drink-price">€6,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Strawberry Kiss</span>
+                        <span class="drink-price">€6,90</span>
+                    </div>
+                    <div class="drink-item">
+                        <span class="drink-name">Baby Pina Colada</span>
+                        <span class="drink-price">€6,90</span>
+                    </div>
+                </div>
+
+                <div style="text-align: center; padding: 60px 20px 40px 20px;">
+                    <img src="images/logo.png" alt="Restaurant Edel" style="width: 180px; margin-bottom: 30px; opacity: 0.8;">
+                    <p style="font-family: 'Fraunces', serif; font-size: 20px; color: #c7a36c; line-height: 1.6; margin-bottom: 20px;">
+                        Genießen Sie unsere<br>
+                        erlesene Auswahl<br>
+                        an Getränken
+                    </p>
+                    <p style="font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-top: 30px;">
+                        Alle Preise verstehen sich in Euro<br>
+                        und beinhalten die gesetzliche Mehrwertsteuer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-footer">
+            <p class="footer-name">Restaurant Edel</p>
+            <p>Bundesstraße 41, 8077 Gössendorf</p>
+            <p><strong style="color: #c7a36c;">Tel:</strong> +43 676 5809878 | <strong style="color: #c7a36c;">E-Mail:</strong> office@restaurant-edel.at</p>
+            <p style="margin-top: 5px; font-size: 9px; color: rgba(255,255,255,0.7);">www.restaurant-edel.at</p>
+        </div>
+    </div>
+
+</body>
+</html>
