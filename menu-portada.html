@@ -19,8 +19,8 @@
 
         body {
             font-family: 'Urbanist', sans-serif;
-            color: #ffffff;
-            background: #18312e;
+            color: #18312e;
+            background: #ffffff;
             line-height: 1.6;
         }
 
@@ -31,78 +31,48 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #18312e;
+            background: #ffffff;
             text-align: center;
             padding: 40px;
             position: relative;
+            border: 1px solid #e8e0d5;
         }
 
         .cover-logo {
-            width: 250px;
+            width: 400px;
             height: auto;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .cover-title {
             font-family: 'Fraunces', serif;
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
-            letter-spacing: 6px;
-            margin-bottom: 20px;
-            color: #c7a36c;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: #8B6914;
             text-transform: uppercase;
         }
 
         .cover-divider {
             width: 200px;
             height: 2px;
-            background: #c7a36c;
-            margin: 40px auto;
+            background: #8B6914;
+            margin: 30px auto;
         }
 
         .cover-subtitle {
             font-size: 20px;
             letter-spacing: 3px;
-            color: #c7a36c;
-            font-weight: 300;
+            color: #8B6914;
+            font-weight: 400;
         }
 
         .cover-info {
-            margin-top: 80px;
-            font-size: 18px;
-            color: rgba(255,255,255,0.7);
+            margin-top: 60px;
+            font-size: 16px;
+            color: rgba(24, 49, 46, 0.7);
             line-height: 2;
-        }
-
-        .menu-image-wrapper {
-            position: relative;
-            display: inline-block;
-            width: 400px;
-            margin: 30px 0;
-        }
-
-        .menu-image {
-            display: block;
-            border-radius: 300px 300px 0 0;
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            aspect-ratio: 2 / 1;
-        }
-
-        .menu-image-wrapper::before {
-            content: "";
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 1px solid #c7a36c;
-            border-radius: 300px 300px 0 0;
-            pointer-events: none;
-            z-index: 2;
         }
 
         .corner-decoration {
@@ -112,52 +82,32 @@
             z-index: 10;
         }
 
-        .corner-left-top {
-            top: 0;
-            left: 0;
-        }
-
-        .corner-left-bottom {
-            bottom: 0;
-            left: 0;
-        }
-
-        .corner-right-top {
-            top: 0;
-            right: 0;
-        }
-
-        .corner-right-bottom {
-            bottom: 0;
-            right: 0;
-        }
+        .corner-left-top { top: 0; left: 0; }
+        .corner-left-bottom { bottom: 0; left: 0; }
+        .corner-right-top { top: 0; right: 0; }
+        .corner-right-bottom { bottom: 0; right: 0; }
 
         @media print {
-            body {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
+            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .cover-page { border: none; }
         }
     </style>
 </head>
 <body>
 
-    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="">
-    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="">
-    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="">
-    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="">
+    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="" onerror="this.style.display='none'">
 
     <div class="cover-page">
         <img src="images/logo.png" alt="Restaurant Edel" class="cover-logo">
 
-        <div class="menu-image-wrapper">
-            <img src="images/resource/menus-2.jpg" alt="Restaurant Edel Speisen" class="menu-image">
-        </div>
-
         <div class="cover-divider"></div>
-        <h1 class="cover-title">SPEISEKARTE</h1>
+        <h1 class="cover-title">Speisekarte</h1>
         <p class="cover-subtitle">Restaurant Edel</p>
         <div class="cover-divider"></div>
+
         <div class="cover-info">
             Bundesstraße 41<br>
             8077 Gössendorf, Österreich<br>

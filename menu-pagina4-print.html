@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Burger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #18312e;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #ffffff;
+            position: relative;
+            padding: 25px 50px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e8e0d5;
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-logo {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .page-title {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            color: #8B6914;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #8B6914;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            color: #8B6914;
+            margin: 10px 0 6px 0;
+            font-weight: 600;
+            letter-spacing: 0;
+            text-transform: capitalize;
+        }
+
+        .menu-item {
+            margin-bottom: 6px;
+            padding-bottom: 4px;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Fraunces', serif;
+            font-size: 14px;
+            color: #8B6914;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+            line-height: 20px;
+            position: relative;
+        }
+
+        .item-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: #18312e;
+            padding-right: 10px;
+            text-transform: uppercase;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-header::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-bottom: 1px dotted rgba(139, 105, 20, 0.5);
+            z-index: 0;
+        }
+
+        .item-price {
+            font-size: 15px;
+            font-weight: 600;
+            color: #8B6914;
+            white-space: nowrap;
+            padding-left: 10px;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-description {
+            font-size: 12px;
+            color: rgba(24, 49, 46, 0.75);
+            font-style: normal;
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+
+        .item-allergens {
+            font-size: 11px;
+            color: #6b5010;
+            margin-top: 2px;
+        }
+
+        .section-note {
+            font-size: 12px;
+            color: rgba(24, 49, 46, 0.7);
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .corner-left-top { top: 0; left: 0; }
+        .corner-left-bottom { bottom: 0; left: 0; }
+        .corner-right-top { top: 0; right: 0; }
+        .corner-right-bottom { bottom: 0; right: 0; }
+
+        @media print {
+            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .menu-page { border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="" onerror="this.style.display='none'">
+
+    <div class="menu-page">
+        <h2 class="page-title">Burger</h2>
+
+        <div class="menu-content">
+            <p class="section-note">Alle Burger werden im Brioche-Burgerbun serviert, belegt mit Tomaten, roten Zwiebeln, Eisbergsalat und hausgemachter Burger-Sauce.</p>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Edel Burger</div>
+                    <div class="item-price">€18,90</div>
+                </div>
+                <div class="item-description">Beef-Burger mit gebratenem Speck und Spiegelei, dazu Fry'n Dips mit Parmesan und Knoblauch-Salsa</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Classic Beef Burger</div>
+                    <div class="item-price">€15,90</div>
+                </div>
+                <div class="item-description">Beef-Burger mit Bratkartoffeln und Chili-Salsa zum Dippen</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Smash Burger</div>
+                    <div class="item-price">€16,90</div>
+                </div>
+                <div class="item-description">Beef-Burger mit Cheddar Cheese, gegrillten roten Zwiebeln und gebratenem Speck, Pommes und Mayonnaise zum Dippen</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Chicken Burger</div>
+                    <div class="item-price">€15,90</div>
+                </div>
+                <div class="item-description">Burger mit gegrilltem oder gebackenem Hühnerbrustfilet, Pommes und Knoblauch-Salsa zum Dippen</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Vegetarian Burger</div>
+                    <div class="item-price">€14,90</div>
+                </div>
+                <div class="item-description">Vegetarischer Burger mit knusprigem Gemüselaibchen, Fry'n Dips mit Parmesan und Ketchup</div>
+                <div class="item-allergens">Allergene: A, C, L, M</div>
+            </div>
+
+        </div>
+        <div class="page-number">4</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Hauptgerichte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #18312e;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #ffffff;
+            position: relative;
+            padding: 25px 50px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e8e0d5;
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-logo {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .page-title {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            color: #8B6914;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #8B6914;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            color: #8B6914;
+            margin: 10px 0 6px 0;
+            font-weight: 600;
+            letter-spacing: 0;
+            text-transform: capitalize;
+        }
+
+        .menu-item {
+            margin-bottom: 6px;
+            padding-bottom: 4px;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Fraunces', serif;
+            font-size: 14px;
+            color: #8B6914;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+            line-height: 20px;
+            position: relative;
+        }
+
+        .item-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: #18312e;
+            padding-right: 10px;
+            text-transform: uppercase;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-header::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-bottom: 1px dotted rgba(139, 105, 20, 0.5);
+            z-index: 0;
+        }
+
+        .item-price {
+            font-size: 15px;
+            font-weight: 600;
+            color: #8B6914;
+            white-space: nowrap;
+            padding-left: 10px;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-description {
+            font-size: 12px;
+            color: rgba(24, 49, 46, 0.75);
+            font-style: normal;
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+
+        .item-allergens {
+            font-size: 11px;
+            color: #6b5010;
+            margin-top: 2px;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .corner-left-top { top: 0; left: 0; }
+        .corner-left-bottom { bottom: 0; left: 0; }
+        .corner-right-top { top: 0; right: 0; }
+        .corner-right-bottom { bottom: 0; right: 0; }
+
+        @media print {
+            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .menu-page { border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="" onerror="this.style.display='none'">
+
+    <div class="menu-page">
+        <h2 class="page-title">Hauptgerichte</h2>
+
+        <div class="menu-content">
+            <h3 class="section-title">Huhn</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Hühnerschnitzel in Knusperpanade</div>
+                    <div class="item-price">€17,90</div>
+                </div>
+                <div class="item-description">Mit Fry'n Dips Pommes, Parmesan und Preiselbeeren</div>
+                <div class="item-allergens">Allergene: A, C, L, M, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Steirisches Backhendl – halbes Huhn</div>
+                    <div class="item-price">€14,00</div>
+                </div>
+                <div class="item-description">Mit Vorbestellung</div>
+                <div class="item-allergens">Allergene: A, C</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Steirisches Backhendl – ganzes Huhn</div>
+                    <div class="item-price">€28,50</div>
+                </div>
+                <div class="item-description">Mit Vorbestellung</div>
+                <div class="item-allergens">Allergene: A, C</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Backhendlsalat</div>
+                    <div class="item-price">€14,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A, C, M, O</div>
+            </div>
+
+            <h3 class="section-title">Schwein</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Edelschnitzel vom Schwein in Knusperpanade</div>
+                    <div class="item-price">€17,50</div>
+                </div>
+                <div class="item-description">Mit Fry'n Dips Pommes, Parmesan und Preiselbeeren</div>
+                <div class="item-allergens">Allergene: A, C, L, M, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Cordon Bleu vom Schwein</div>
+                    <div class="item-price">€18,90</div>
+                </div>
+                <div class="item-description">Gefüllt mit Schinken und Käse, dazu Fry'n Dips Pommes mit Parmesan und Preiselbeeren</div>
+                <div class="item-allergens">Allergene: A, C, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Mix Grill</div>
+                    <div class="item-price">€19,80</div>
+                </div>
+                <div class="item-description">Gegrillte Hühnerbrust, Schweinekotelett und Debrecener Wurst, dazu Pommes mit Parmesan und Knoblauch-Salsa</div>
+                <div class="item-allergens">Allergene: A, C, G, L, M</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Tomahawk (350–450 g)</div>
+                    <div class="item-price">€29,90</div>
+                </div>
+                <div class="item-description">Mit hausgemachten Wedges und gegrilltem Gemüse</div>
+                <div class="item-allergens">Allergene: A, G, L, M</div>
+            </div>
+
+            <h3 class="section-title">Rind</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Ribeye (300–350 g)</div>
+                    <div class="item-price">€39,90</div>
+                </div>
+                <div class="item-description">Mit Ofenkartoffel und Pfefferrahmsauce</div>
+                <div class="item-allergens">Allergene: A, C, G, L, M, O</div>
+            </div>
+
+            <h3 class="section-title">Fisch</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Calamari fritti</div>
+                    <div class="item-price">€20,90</div>
+                </div>
+                <div class="item-description">Gegrillt, mit Knoblauchbrot</div>
+                <div class="item-allergens">Allergene: A, C, G, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Lachs mit Reis und Erbsenpüree</div>
+                    <div class="item-price">€19,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A, D, G, L, M</div>
+            </div>
+
+        </div>
+        <div class="page-number">5</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Kindermenü • Dessert • Beilagen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #18312e;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: #ffffff;
+            position: relative;
+            padding: 25px 50px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e8e0d5;
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .menu-logo {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .page-title {
+            font-family: 'Fraunces', serif;
+            font-size: 26px;
+            color: #8B6914;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #8B6914;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            color: #8B6914;
+            margin: 10px 0 6px 0;
+            font-weight: 600;
+            letter-spacing: 0;
+            text-transform: capitalize;
+        }
+
+        .menu-item {
+            margin-bottom: 6px;
+            padding-bottom: 4px;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Fraunces', serif;
+            font-size: 14px;
+            color: #8B6914;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+            line-height: 18px;
+            position: relative;
+        }
+
+        .item-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #18312e;
+            padding-right: 10px;
+            text-transform: uppercase;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-header::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-bottom: 1px dotted rgba(139, 105, 20, 0.5);
+            z-index: 0;
+        }
+
+        .item-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: #8B6914;
+            white-space: nowrap;
+            padding-left: 10px;
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item-description {
+            font-size: 11px;
+            color: rgba(24, 49, 46, 0.75);
+            font-style: normal;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        .item-allergens {
+            font-size: 10px;
+            color: #6b5010;
+            margin-top: 2px;
+        }
+
+        .thank-you {
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid rgba(139, 105, 20, 0.4);
+        }
+
+        .thank-you-title {
+            font-size: 20px;
+            color: #8B6914;
+            margin-bottom: 10px;
+            font-family: 'Fraunces', serif;
+        }
+
+        .thank-you-info {
+            font-size: 12px;
+            color: rgba(24, 49, 46, 0.7);
+            line-height: 1.8;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 10;
+        }
+
+        .corner-left-top { top: 0; left: 0; }
+        .corner-left-bottom { bottom: 0; left: 0; }
+        .corner-right-top { top: 0; right: 0; }
+        .corner-right-bottom { bottom: 0; right: 0; }
+
+        @media print {
+            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .menu-page { border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="images/resource/menucard-corner-left-top.png" class="corner-decoration corner-left-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-left-bottom.png" class="corner-decoration corner-left-bottom" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-top.png" class="corner-decoration corner-right-top" alt="" onerror="this.style.display='none'">
+    <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="" onerror="this.style.display='none'">
+
+    <div class="menu-page">
+        <h2 class="page-title">Kindermenü • Dessert • Beilagen</h2>
+
+        <div class="menu-content">
+            <h3 class="section-title">Kindermenü</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Kids Wiener vom Huhn</div>
+                    <div class="item-price">€11,50</div>
+                </div>
+                <div class="item-description">Mit Pommes frites und Ketchup</div>
+                <div class="item-allergens">Allergene: A, C, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Kids Bolognese</div>
+                    <div class="item-price">€9,50</div>
+                </div>
+                <div class="item-description">Tagliatelle mit Tomaten-Rindfleischragout</div>
+                <div class="item-allergens">Allergene: A, C, G, L, M</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Kids Pomodoro</div>
+                    <div class="item-price">€8,50</div>
+                </div>
+                <div class="item-description">Tagliatelle mit Tomaten-Basilikum-Sauce</div>
+                <div class="item-allergens">Allergene: A, C, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Kids Pasta</div>
+                    <div class="item-price">€4,90</div>
+                </div>
+                <div class="item-description">Tagliatelle mit Butter</div>
+                <div class="item-allergens">Allergene: A, C, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Kids Chicken Nuggets</div>
+                    <div class="item-price">€10,50</div>
+                </div>
+                <div class="item-description">Hausgemachte Chicken Nuggets mit Pommes frites und Ketchup</div>
+                <div class="item-allergens">Allergene: A, C, G</div>
+            </div>
+
+            <h3 class="section-title">Dessert</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Strudel mit Äpfeln und Crème Anglaise</div>
+                    <div class="item-price">€7,50</div>
+                </div>
+                <div class="item-allergens">Allergene: A, C, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Somlói</div>
+                    <div class="item-price">€7,50</div>
+                </div>
+                <div class="item-description">Ungarischer Schichtkuchen</div>
+                <div class="item-allergens">Allergene: A, C, H, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Palatschinken (2 Stück)</div>
+                    <div class="item-price">€7,50</div>
+                </div>
+                <div class="item-description">Mit Marmelade oder Nutella</div>
+                <div class="item-allergens">Allergene: A, C, G</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Panna Cotta</div>
+                    <div class="item-price">€7,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A, C, G</div>
+            </div>
+
+            <h3 class="section-title">Beilagen</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Sauerrahm & Pfefferoni</div>
+                    <div class="item-price">€1,50</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Preiselbeeren</div>
+                    <div class="item-price">€1,50</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Brot</div>
+                    <div class="item-price">€1,50</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Pfefferrahmsauce</div>
+                    <div class="item-price">€2,50</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page-number">6</div>
+    </div>
+
+</body>
+</html>
