@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Edel - Pasta</title>
+    <title>Restaurant Edel - Burger • Rind • Fisch</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         @page {
@@ -40,31 +40,24 @@
             z-index: 1;
         }
 
-        .menu-logo {
-            width: 200px;
-            height: auto;
-            display: block;
-            margin: 20px auto 0;
-        }
-
         .page-title {
             font-family: 'Fraunces', serif;
             font-size: 28px;
-            color: #8B6914;
+            color: #18312e;
             font-weight: 700;
             letter-spacing: 0;
             text-transform: uppercase;
             margin-top: 15px;
             margin-bottom: 20px;
             padding-bottom: 12px;
-            border-bottom: 2px solid #8B6914;
+            border-bottom: 2px solid #18312e;
             text-align: center;
         }
 
         .section-title {
             font-family: 'Fraunces', serif;
             font-size: 20px;
-            color: #8B6914;
+            color: #18312e;
             margin: 10px 0 6px 0;
             font-weight: 600;
             letter-spacing: 0;
@@ -83,7 +76,7 @@
             transform: translateX(-50%);
             font-family: 'Fraunces', serif;
             font-size: 14px;
-            color: #8B6914;
+            color: #18312e;
         }
 
         .item-header {
@@ -97,7 +90,7 @@
 
         .item-name {
             font-size: 15px;
-            font-weight: 500;
+            font-weight: 700;
             color: #18312e;
             padding-right: 10px;
             text-transform: uppercase;
@@ -113,14 +106,14 @@
             left: 0;
             right: 0;
             height: 0;
-            border-bottom: 1px dotted rgba(139, 105, 20, 0.5);
+            border-bottom: 1px dotted rgba(24, 49, 46, 0.5);
             z-index: 0;
         }
 
         .item-price {
-            font-size: 15px;
-            font-weight: 600;
-            color: #8B6914;
+            font-size: 16px;
+            font-weight: 700;
+            color: #18312e;
             white-space: nowrap;
             padding-left: 10px;
             background: #ffffff;
@@ -138,8 +131,15 @@
 
         .item-allergens {
             font-size: 11px;
-            color: #6b5010;
+            color: #18312e;
             margin-top: 2px;
+        }
+
+        .section-note {
+            font-size: 12px;
+            color: #18312e;
+            font-style: italic;
+            margin-bottom: 10px;
         }
 
         .corner-decoration {
@@ -168,62 +168,85 @@
     <img src="images/resource/menucard-corner-right-bottom.png" class="corner-decoration corner-right-bottom" alt="" onerror="this.style.display='none'">
 
     <div class="menu-page">
-        <h2 class="page-title">Pasta</h2>
+        <h2 class="page-title">Burger • Rind • Fisch</h2>
 
         <div class="menu-content">
+            <h3 class="section-title">Burger</h3>
+            <p class="section-note">Alle Burger werden im Brioche-Burgerbun serviert, belegt mit Tomaten, roten Zwiebeln, Eisbergsalat und hausgemachter Burger-Sauce.</p>
 
             <div class="menu-item">
                 <div class="item-header">
-                    <div class="item-name">Lasagne Bolognese</div>
-                    <div class="item-price">€16,50</div>
+                    <div class="item-name">Edel Burger</div>
+                    <div class="item-price">€18,90</div>
                 </div>
-                <div class="item-description">Hausgemachte Lasagne mit Tomaten-Rindfleischsugo und Béchamelsauce, mit Käse gratiniert</div>
-                <div class="item-allergens">Allergene: A, C, G, L, M</div>
+                <div class="item-description">Beef-Burger mit gebratenem Speck und Spiegelei, dazu Fry'n Dips mit Parmesan und Knoblauch-Salsa</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
             </div>
 
             <div class="menu-item">
                 <div class="item-header">
-                    <div class="item-name">Tagliatelle Carbonara</div>
-                    <div class="item-price">€16,90</div>
-                </div>
-                <div class="item-description">Tagliatelle mit Parmesan-Sahnesauce und Guanciale</div>
-                <div class="item-allergens">Allergene: A, C, G, L, O</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="item-header">
-                    <div class="item-name">Tagliatelle Bolognese</div>
-                    <div class="item-price">€16,90</div>
-                </div>
-                <div class="item-description">Tagliatelle mit hausgemachtem Tomaten-Rindfleischsugo</div>
-                <div class="item-allergens">Allergene: A, C, G, L, O</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="item-header">
-                    <div class="item-name">Tagliatelle Veggi</div>
+                    <div class="item-name">Classic Beef Burger</div>
                     <div class="item-price">€15,90</div>
                 </div>
-                <div class="item-description">Tagliatelle mit Gemüse</div>
-                <div class="item-allergens">Allergene: A, C, G</div>
+                <div class="item-description">Beef-Burger mit Bratkartoffeln und Chili-Salsa zum Dippen</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
             </div>
 
             <div class="menu-item">
                 <div class="item-header">
-                    <div class="item-name">Tagliatelle Pomodoro (vegan)</div>
+                    <div class="item-name">Smash Burger</div>
+                    <div class="item-price">€16,90</div>
+                </div>
+                <div class="item-description">Beef-Burger mit Cheddar Cheese, gegrillten roten Zwiebeln und gebratenem Speck, Pommes und Mayonnaise zum Dippen</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Chicken Burger</div>
+                    <div class="item-price">€15,90</div>
+                </div>
+                <div class="item-description">Burger mit gegrilltem oder gebackenem Hühnerbrustfilet, Pommes und Knoblauch-Salsa zum Dippen</div>
+                <div class="item-allergens">Allergene: A, C, G, M, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Vegetarian Burger</div>
                     <div class="item-price">€14,90</div>
                 </div>
-                <div class="item-description">Tagliatelle mit hausgemachter Tomatensauce, frischem Basilikum und Parmesan</div>
+                <div class="item-description">Vegetarischer Burger mit knusprigem Gemüselaibchen, Fry'n Dips mit Parmesan und Ketchup</div>
                 <div class="item-allergens">Allergene: A, C, L, M</div>
             </div>
 
+            <h3 class="section-title">Rind</h3>
+
             <div class="menu-item">
                 <div class="item-header">
-                    <div class="item-name">Tagliatelle Frutti di Mare</div>
-                    <div class="item-price">€18,90</div>
+                    <div class="item-name">Ribeye (300–350 g)</div>
+                    <div class="item-price">€39,90</div>
                 </div>
-                <div class="item-description">Tagliatelle mit Meeresfrüchten, cremiger Sahne-Zwiebel-Sauce und Parmesan</div>
-                <div class="item-allergens">Allergene: A, B, C, D, G, L, O, R</div>
+                <div class="item-description">Mit Ofenkartoffel und Pfefferrahmsauce</div>
+                <div class="item-allergens">Allergene: A, C, G, L, M, O</div>
+            </div>
+
+            <h3 class="section-title">Fisch</h3>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Calamari fritti</div>
+                    <div class="item-price">€20,90</div>
+                </div>
+                <div class="item-description">Gegrillt, mit Knoblauchbrot</div>
+                <div class="item-allergens">Allergene: A, C, G, L</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <div class="item-name">Lachs mit Reis und Erbsenpüree</div>
+                    <div class="item-price">€19,90</div>
+                </div>
+                <div class="item-allergens">Allergene: A, D, G, L, M</div>
             </div>
 
         </div>
