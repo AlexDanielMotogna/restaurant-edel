@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Edel - Speisekarte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            color: #2c2c2c;
+            background: #ffffff;
+            line-height: 1.4;
+        }
+
+        .menu-page {
+            width: 210mm;
+            height: 297mm;
+            background: transparent;
+            position: relative;
+            padding: 6mm 12mm 10mm 12mm;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        /* Corner decorations */
+        .corner-decoration {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            z-index: 10;
+        }
+        .corner-left-top { top: 0; left: 0; }
+        .corner-left-bottom { bottom: 0; left: 0; }
+        .corner-right-top { top: 0; right: 0; }
+        .corner-right-bottom { bottom: 0; right: 0; }
+
+        /* Header */
+        .menu-header {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .menu-logo {
+            width: 180px;
+            height: auto;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .menu-main-title {
+            font-family: 'Fraunces', serif;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            line-height: 1.2;
+        }
+
+        /* Layout */
+        .content-area {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12mm;
+            position: relative;
+            z-index: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #2c2c2c;
+            text-align: center;
+            margin: 12px 0 8px 0;
+            padding: 5px 0;
+            border-bottom: none;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 35%;
+            margin: 4px auto 0;
+            border-bottom: 0.3px solid rgba(139, 105, 20, 0.25);
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        /* Alignment variations */
+        .align-left { text-align: left; }
+        .align-left .item-name,
+        .align-left .item-details,
+        .align-left .item-price { text-align: left; }
+
+        .align-right { text-align: right; }
+        .align-right .item-name,
+        .align-right .item-details,
+        .align-right .item-price { text-align: right; }
+
+        /* Offset columns */
+        .col-offset-top { padding-top: 30px; }
+
+        /* Menu items */
+        .menu-item {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .item-name {
+            font-family: 'Fraunces', serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: #2c2c2c;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .item-details {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 11px;
+            font-style: italic;
+            color: #555;
+            line-height: 1.4;
+            margin: 3px 0 2px 0;
+            text-align: center;
+        }
+
+        .item-price {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: #8B6914;
+            letter-spacing: 0.3px;
+            text-align: center;
+        }
+
+        .item-info {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            color: #8B6914;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .item-allergens {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 10px;
+            color: #888;
+            letter-spacing: 0.5px;
+        }
+
+        /* Decorative dot separator between items */
+        .menu-item-decorated {
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            position: relative;
+        }
+        .menu-item-decorated::after {
+            content: "· · ·";
+            display: block;
+            text-align: center;
+            color: rgba(139, 105, 20, 0.35);
+            font-size: 10px;
+            letter-spacing: 4px;
+            margin-top: 6px;
+        }
+
+        /* Beilagen */
+        .beilagen-grid .item-details {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .menu-footer {
+            text-align: center;
+            font-size: 10px;
+            color: #777;
+            margin-top: 12px;
+            padding-top: 6px;
+            border-top: 0.3px solid rgba(139, 105, 20, 0.2);
+            line-height: 1.5;
+        }
+
+        @media print {
+            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .menu-page { border: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== PÁGINA 1: CARA ==================== -->
+<div class="menu-page">
+
+    <!-- Header -->
+    <div class="menu-header">
+        <img src="images/resource/sidebar-logo.png" class="menu-logo" alt="Restaurant Edel" onerror="this.style.display='none'">
+        <div class="menu-main-title">Speisekarte</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-area">
+
+        <!-- COLUMNA IZQUIERDA: Vorspeise, Suppe -->
+        <div class="column">
+            <div class="section-title">Vorspeise</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Beef Tatar (120g)</div>
+                <div class="item-details">Schnittlauch-Zitronen-Mayonnaise | Trüffel-Kartoffelchips | Eingelegtes Gemüse | Eidotter | Butter | Toastbrot</div>
+                <div class="item-price">€18,50 <span class="item-allergens">(A, C, D, M, O, G, L)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Salata de Vinete (140g)</div>
+                <div class="item-details">Melanzani-Tatar | Röstpaprika-Creme | Gepickelte rote Zwiebeln | Kürbiskerne | Konfierte Tomate | Fladenbrot</div>
+                <div class="item-price">€14,50 <span class="item-allergens">(A, O, M, L)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Gebeizte Zander</div>
+                <div class="item-details">Sauerrahm | Rote Bete | Dill | Gurken</div>
+                <div class="item-price">€16,50 <span class="item-allergens">(A, G, O, L)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Calamari Gegrillt</div>
+                <div class="item-details">Mit Knoblauchbrot</div>
+                <div class="item-price">€19,90 <span class="item-allergens">(A, G)</span></div>
+            </div>
+
+            <div class="section-title">Suppe</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Kräftige Rindsuppe</div>
+                <div class="item-details">Mit Frittaten €5,90 | Mit Kaspressknödel €6,50</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Knoblauch-Cremesuppe</div>
+                <div class="item-details">Mit Brot-Croutons</div>
+                <div class="item-price">€5,90 <span class="item-allergens">(A, C, G, L, O)</span></div>
+            </div>
+
+            <div class="section-title">Salat</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Gemischter Salat</div>
+                <div class="item-price">€5,70</div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Backhendl-Salat</div>
+                <div class="item-details">Hühnerkeule | Kürbiskern-Panade | Kartoffelsalat | Vogerlsalat</div>
+                <div class="item-price">€15,90 <span class="item-allergens">(A, O, G)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Camembert-Salat</div>
+                <div class="item-details">Gemischter Salat | Karamellisierter Camembert | Walnüsse | Balsamico-Senf-Vinaigrette</div>
+                <div class="item-price">€13,90 <span class="item-allergens">(G, O, M, L, H)</span></div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Pasta, Wiener Klassiker -->
+        <div class="column col-offset-top">
+            <div class="section-title">Pasta</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Steirische Carbonara</div>
+                <div class="item-details">Eiernockerl | Bergkäse | Speck | Pochiertes Ei | Kürbiskernöl | Geschmorter Lauch</div>
+                <div class="item-price">€18,50 <span class="item-allergens">(A, C, G)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Ravioli mit Pilzfüllung</div>
+                <div class="item-details">Sautierter Babyspinat | Leichte Trüffelrahmsauce</div>
+                <div class="item-price">€17,50 <span class="item-allergens">(A, G, O, L)</span></div>
+            </div>
+
+            <div class="section-title">Wiener Klassiker</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Schweineschnitzel Wiener Art</div>
+                <div class="item-details">Mit Pommes | Preiselbeeren | Zitrone<br>oder mit Petersilienkartoffeln | Preiselbeeren | Zitrone</div>
+                <div class="item-price">€17,50 <span class="item-allergens">(A, C, G)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Backhendl</div>
+                <div class="item-details">Ganz €27,90 | 1/2 €13,90<br>(nur mit Vorbestellung)</div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Cordon Bleu vom Schwein</div>
+                <div class="item-details">Gefüllt mit Bauernschinken | Bergkäse | Jungzwiebel<br>Mit Pommes oder Petersilienkartoffeln | Preiselbeeren | Zitrone</div>
+                <div class="item-price">€18,90 <span class="item-allergens">(A, C, G)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Edel Burger</div>
+                <div class="item-details">Brioche | Beef Patty 180g | Salat | Haus-Burgersauce | Bergkäse | Karamellisierte rote Zwiebeln | Spiegelei | Speck</div>
+                <div class="item-price">€19,50 <span class="item-allergens">(A, C, G, O, L, F, M)</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ==================== PÁGINA 2: VERSO ==================== -->
+<div class="menu-page">
+
+    <!-- Header -->
+    <div class="menu-header">
+        <img src="images/resource/sidebar-logo.png" class="menu-logo" alt="Restaurant Edel" onerror="this.style.display='none'">
+        <div class="menu-main-title">Speisekarte</div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-area">
+
+        <!-- COLUMNA IZQUIERDA: Steak, Hauptspeise -->
+        <div class="column col-offset-top">
+            <div class="section-title">Steak</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Filet Steak</div>
+                <div class="item-details">Lady 180g · €30,00 | Gentleman 250g · €39,50</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Rib Eye 300g</div>
+                <div class="item-price">€39,50</div>
+            </div>
+
+            <div class="section-title">Hauptspeise</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Sarmale</div>
+                <div class="item-details">Krautroulade gefüllt mit Faschiertem | Polenta | Geräucherte Tomatensauce | Sauerrahm-Espuma | Dillöl</div>
+                <div class="item-price">€17,50 <span class="item-allergens">(A, G, O, F)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Zwiebelrostbraten</div>
+                <div class="item-details">Rosa gebratenes Beiried | Speckbohnen | Rosmarinkartoffeln | Zwiebelsauce</div>
+                <div class="item-price">€24,50 <span class="item-allergens">(A, L, M, O)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Saramura de Pește</div>
+                <div class="item-details">Zander auf cremigem Frühlings-Risotto | Geröstete Tomaten-Paprika-Salzlake | Zucchini | Weißwein-Schaum</div>
+                <div class="item-price">€26,50 <span class="item-allergens">(A, O, D, L)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Ciulama de Pui</div>
+                <div class="item-details">Maishendl Supreme | Kartoffel-Sellerie-Püree | Champignons | Cremige Trüffelsauce</div>
+                <div class="item-price">€23,50 <span class="item-allergens">(A, C, G, O, L)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Gerösteter Blumenkohl</div>
+                <div class="item-details">Mandel-Hummus | Granatapfel | Petersilienöl</div>
+                <div class="item-price">€16,50 <span class="item-info">Vegan</span> <span class="item-allergens">(N, F)</span></div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Kleiner Hunger, Dessert, Beilagen, Saucen -->
+        <div class="column">
+            <div class="section-title">Kleiner Hunger</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Kinderschnitzel mit Pommes</div>
+                <div class="item-details">Ketchup oder Mayo</div>
+                <div class="item-price">€10,50 <span class="item-allergens">(A, C, M, L, F)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Chicken Nuggets (4 Stk.) mit Pommes</div>
+                <div class="item-details">Ketchup oder Mayo</div>
+                <div class="item-price">€7,50 <span class="item-allergens">(A, C, M, L, F)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Grillwürste mit Pommes</div>
+                <div class="item-details">Ketchup oder Mayo</div>
+                <div class="item-price">€8,50 <span class="item-allergens">(M, L, F)</span></div>
+            </div>
+
+            <div class="section-title">Dessert</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Steiremisu</div>
+                <div class="item-details">Tiramisu mit Kürbiskernöl | Himbeersauce</div>
+                <div class="item-price">€9,00 <span class="item-allergens">(A, C, G, O)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Lapte de Pasăre</div>
+                <div class="item-details">Tonkabohne-Süppchen | Erdbeere | Mandel-Crumble | Schneenockerl</div>
+                <div class="item-price">€9,00 <span class="item-allergens">(A, C, H, G)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Papanași</div>
+                <div class="item-details">Ricottakrapfen | Heidelbeer-Ragout | Limette | Kokossauce</div>
+                <div class="item-price">€9,00 <span class="item-allergens">(A, C, G, O)</span></div>
+            </div>
+
+            <div class="section-title">Beilagen</div>
+
+            <div class="menu-item beilagen-grid">
+                <div class="item-details">
+                    Pommes €5,50 | Trüffel-Pommes €6,50 | Aioli-Pommes €6,00<br>
+                    Rosmarinkartoffeln €5,50 | Speckbohnen €5,50 | Grillgemüse €5,00
+                </div>
+            </div>
+
+            <div class="section-title">Saucen</div>
+
+            <div class="menu-item beilagen-grid">
+                <div class="item-details">
+                    Pfeffersauce €3,70 | Chimichurri €3,10<br>
+                    Trüffel-Mayo | Chipotle-Mayo | Rosmarin-Aioli · je €3,00<br>
+                    Mayonnaise & Ketchup €1,00 | Sauerrahm & Peperoni €1,50<br>
+                    Brot €1,50
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="menu-footer">
+        Einige Gerichte können Allergene enthalten. Bitte informieren Sie unser Personal über eventuelle Lebensmittelallergien.<br>
+        Alle Preise in Euro inkl. 10% MwSt.
+    </div>
+</div>
+
+</body>
+</html>

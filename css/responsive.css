@@ -398,6 +398,23 @@
 
 @media only screen and (max-width: 991px){
 
+	/* Menu images - center on tablet */
+	.menu-tabs .menu-col.img-col {
+		text-align: center;
+	}
+
+	.menu-tabs .menu-col.img-col .image {
+		width: 300px !important;
+		height: 380px !important;
+		margin: 0 auto;
+	}
+
+	/* Easter background - center on tablet */
+	#tab-easter > div:first-child {
+		background-size: 300px auto !important;
+		background-position: center center !important;
+	}
+
 	/* heading */
 	.banner-section .slide-item h1{
 		font-size: 60px;
@@ -944,6 +961,29 @@
 
 
 @media only screen and (max-width: 767px){
+
+	/* Menu images - center on mobile */
+	.menu-tabs .menu-col.img-col {
+		text-align: center;
+		padding: 20px 0;
+	}
+
+	.menu-tabs .menu-col.img-col .image {
+		width: 250px !important;
+		height: 320px !important;
+		margin: 0 auto;
+	}
+
+	/* Easter background - center on mobile */
+	#tab-easter > div:first-child {
+		width: 100% !important;
+		right: auto !important;
+		left: 0 !important;
+		transform: none !important;
+		background-position: center center !important;
+		background-size: 250px auto !important;
+		opacity: 0.08 !important;
+	}
 
 	/* section padding */
 	.section-kt {
@@ -1648,6 +1688,12 @@
 	.testimonials-two .testi-block .inner-box{
 		padding-left: 25px;
 		padding-right: 25px;
+		min-height: 250px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 	}
 
 

@@ -49,9 +49,14 @@ if($('.main-header').length){
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.loader-wrap').length){
-			$('.loader-wrap').delay(50).fadeOut(200);
+			$('.loader-wrap').delay(0).fadeOut(200);
 		}
 	}
+
+	// Force hide preloader after max 1 second
+	setTimeout(function() {
+		handlePreloader();
+	}, 1000);
 
 	if ($(".preloader-close").length) {
         $(".preloader-close").on("click", function(){
