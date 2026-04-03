@@ -29,7 +29,7 @@
             height: 297mm;
             background: transparent;
             position: relative;
-            padding: 6mm 12mm 10mm 12mm;
+            padding: 0mm 12mm 10mm 12mm;
             display: flex;
             flex-direction: column;
             page-break-after: always;
@@ -50,13 +50,13 @@
         /* Header */
         .menu-header {
             text-align: center;
-            margin-bottom: 22px;
+            margin-bottom: 2px;
         }
 
         .menu-logo {
-            width: 180px;
+            width: 270px;
             height: auto;
-            margin: 0 auto 15px;
+            margin: 0 auto 0;
             display: block;
         }
 
@@ -94,7 +94,7 @@
             letter-spacing: 3px;
             color: #2c2c2c;
             text-align: center;
-            margin: 12px 0 8px 0;
+            margin: 5px 0 3px 0;
             padding: 5px 0;
             border-bottom: none;
         }
@@ -123,11 +123,11 @@
         .align-right .item-price { text-align: right; }
 
         /* Offset columns */
-        .col-offset-top { padding-top: 30px; }
+        .col-offset-top { padding-top: 20px; }
 
         /* Menu items */
         .menu-item {
-            margin-bottom: 10px;
+            margin-bottom: 4px;
             text-align: center;
         }
 
@@ -143,9 +143,9 @@
 
         .item-details {
             font-family: 'Urbanist', sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             font-style: italic;
-            color: #555;
+            color: #2c2c2c;
             line-height: 1.4;
             margin: 3px 0 2px 0;
             text-align: center;
@@ -178,8 +178,8 @@
 
         /* Decorative dot separator between items */
         .menu-item-decorated {
-            margin-bottom: 10px;
-            padding-bottom: 6px;
+            margin-bottom: 4px;
+            padding-bottom: 3px;
             position: relative;
         }
         .menu-item-decorated::after {
@@ -196,10 +196,20 @@
         .beilagen-grid .item-details {
             font-size: 11px;
             line-height: 1.5;
+            font-style: normal;
+        }
+
+        .beilagen-grid .price-gold {
+            color: #8B6914;
+            font-weight: 600;
         }
 
         /* Footer */
         .menu-footer {
+            position: absolute;
+            bottom: 8mm;
+            left: 12mm;
+            right: 12mm;
             text-align: center;
             font-size: 10px;
             color: #777;
@@ -229,8 +239,8 @@
     <!-- Content -->
     <div class="content-area">
 
-        <!-- COLUMNA IZQUIERDA: Vorspeise, Suppe -->
-        <div class="column">
+        <!-- COLUMNA IZQUIERDA: Vorspeise, Salat -->
+        <div class="column" style="padding-top: 70px;">
             <div class="section-title">Vorspeise</div>
 
             <div class="menu-item menu-item-decorated">
@@ -241,27 +251,51 @@
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Salata de Vinete (140g)</div>
-                <div class="item-details">Melanzani-Tatar | Röstpaprika-Creme | Gepickelte rote Zwiebeln | Kürbiskerne | Konfierte Tomate | Fladenbrot</div>
+                <div class="item-details">Melanzani-Tatar | Röstpaprika-Creme | Gepickelte rote Zwiebeln | Kürbiskerne | Konfierte Tomate | Hausgemachte Focaccia</div>
                 <div class="item-price">€14,50 <span class="item-allergens">(A, O, M, L)</span></div>
             </div>
 
-            <div class="menu-item menu-item-decorated">
+            <div class="menu-item">
                 <div class="item-name">Gebeizte Zander</div>
                 <div class="item-details">Sauerrahm | Rote Bete | Dill | Gurken</div>
                 <div class="item-price">€16,50 <span class="item-allergens">(A, G, O, L)</span></div>
             </div>
 
-            <div class="menu-item">
-                <div class="item-name">Calamari Gegrillt</div>
-                <div class="item-details">Mit Knoblauchbrot</div>
-                <div class="item-price">€19,90 <span class="item-allergens">(A, G)</span></div>
+            <div class="section-title">Salat</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Gemischter Salat</div>
+                <div class="item-price">€5,90</div>
             </div>
 
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Backhendl-Salat</div>
+                <div class="item-details">Hühnerkeule | Kürbiskern-Panade | Kartoffelsalat | Vogerlsalat</div>
+                <div class="item-price">€17,90 <span class="item-allergens">(A, O, G)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Vogerlsalat</div>
+                <div class="item-details">Kartoffel | Speck | Ei (gekocht)</div>
+                <div class="item-price">€14,90</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Camembert-Salat</div>
+                <div class="item-details">Gemischter Salat | Karamellisierter Camembert | Walnüsse | Balsamico-Senf-Vinaigrette</div>
+                <div class="item-price">€13,90 <span class="item-allergens">(G, O, M, L, H)</span></div>
+            </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA: Suppe, Pasta, Wiener Klassiker -->
+        <div class="column col-offset-top">
             <div class="section-title">Suppe</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Kräftige Rindsuppe</div>
-                <div class="item-details">Mit Frittaten €5,90 | Mit Kaspressknödel €6,50</div>
+                <div class="item-details">Mit Frittaten | Mit Kaspressknödel</div>
+                <div class="item-price">€5,90 | €6,50</div>
             </div>
 
             <div class="menu-item">
@@ -270,33 +304,11 @@
                 <div class="item-price">€5,90 <span class="item-allergens">(A, C, G, L, O)</span></div>
             </div>
 
-            <div class="section-title">Salat</div>
-
-            <div class="menu-item menu-item-decorated">
-                <div class="item-name">Gemischter Salat</div>
-                <div class="item-price">€5,70</div>
-            </div>
-
-            <div class="menu-item menu-item-decorated">
-                <div class="item-name">Backhendl-Salat</div>
-                <div class="item-details">Hühnerkeule | Kürbiskern-Panade | Kartoffelsalat | Vogerlsalat</div>
-                <div class="item-price">€15,90 <span class="item-allergens">(A, O, G)</span></div>
-            </div>
-
-            <div class="menu-item">
-                <div class="item-name">Camembert-Salat</div>
-                <div class="item-details">Gemischter Salat | Karamellisierter Camembert | Walnüsse | Balsamico-Senf-Vinaigrette</div>
-                <div class="item-price">€13,90 <span class="item-allergens">(G, O, M, L, H)</span></div>
-            </div>
-        </div>
-
-        <!-- COLUMNA DERECHA: Pasta, Wiener Klassiker -->
-        <div class="column col-offset-top">
             <div class="section-title">Pasta</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Steirische Carbonara</div>
-                <div class="item-details">Eiernockerl | Bergkäse | Speck | Pochiertes Ei | Kürbiskernöl | Geschmorter Lauch</div>
+                <div class="item-details">Hausgemachte Eiernockerl | Bergkäse | Speck | Pochiertes Ei | Kürbiskernöl | Geschmorter Lauch</div>
                 <div class="item-price">€18,50 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
@@ -304,6 +316,14 @@
                 <div class="item-name">Ravioli mit Pilzfüllung</div>
                 <div class="item-details">Sautierter Babyspinat | Leichte Trüffelrahmsauce</div>
                 <div class="item-price">€17,50 <span class="item-allergens">(A, G, O, L)</span></div>
+            </div>
+
+            <div class="section-title">Burger</div>
+
+            <div class="menu-item">
+                <div class="item-name">Edel Burger</div>
+                <div class="item-details">Brioche | Beef Patty 180g | Salat | Haus-Burgersauce | Bergkäse | Karamellisierte rote Zwiebeln | Spiegelei | Speck</div>
+                <div class="item-price">€19,50 <span class="item-allergens">(A, C, G, O, L, F, M)</span></div>
             </div>
 
             <div class="section-title">Wiener Klassiker</div>
@@ -315,20 +335,15 @@
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Backhendl</div>
-                <div class="item-details">Ganz €27,90 | 1/2 €13,90<br>(nur mit Vorbestellung)</div>
-            </div>
-
-            <div class="menu-item menu-item-decorated">
                 <div class="item-name">Cordon Bleu vom Schwein</div>
                 <div class="item-details">Gefüllt mit Bauernschinken | Bergkäse | Jungzwiebel<br>Mit Pommes oder Petersilienkartoffeln | Preiselbeeren | Zitrone</div>
                 <div class="item-price">€18,90 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="menu-item">
-                <div class="item-name">Edel Burger</div>
-                <div class="item-details">Brioche | Beef Patty 180g | Salat | Haus-Burgersauce | Bergkäse | Karamellisierte rote Zwiebeln | Spiegelei | Speck</div>
-                <div class="item-price">€19,50 <span class="item-allergens">(A, C, G, O, L, F, M)</span></div>
+                <div class="item-name">Backhendl</div>
+                <div class="item-details">(nur mit Vorbestellung)</div>
+                <div class="item-price">Ganz €27,90 | 1/2 €13,90</div>
             </div>
         </div>
 
@@ -347,21 +362,15 @@
     <!-- Content -->
     <div class="content-area">
 
-        <!-- COLUMNA IZQUIERDA: Steak, Hauptspeise -->
-        <div class="column col-offset-top">
-            <div class="section-title">Steak</div>
+        <!-- COLUMNA IZQUIERDA: Hauptspeise, Kleiner Hunger -->
+        <div class="column" style="padding-top: 25px;">
+            <div class="section-title">Hauptspeise</div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Filet Steak</div>
-                <div class="item-details">Lady 180g · €30,00 | Gentleman 250g · €39,50</div>
+                <div class="item-name">Calamari Gegrillt</div>
+                <div class="item-details">Mit Knoblauchbrot</div>
+                <div class="item-price">€19,90 <span class="item-allergens">(A, G)</span></div>
             </div>
-
-            <div class="menu-item">
-                <div class="item-name">Rib Eye 300g</div>
-                <div class="item-price">€39,50</div>
-            </div>
-
-            <div class="section-title">Hauptspeise</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Sarmale</div>
@@ -392,10 +401,7 @@
                 <div class="item-details">Mandel-Hummus | Granatapfel | Petersilienöl</div>
                 <div class="item-price">€16,50 <span class="item-info">Vegan</span> <span class="item-allergens">(N, F)</span></div>
             </div>
-        </div>
 
-        <!-- COLUMNA DERECHA: Kleiner Hunger, Dessert, Beilagen, Saucen -->
-        <div class="column">
             <div class="section-title">Kleiner Hunger</div>
 
             <div class="menu-item menu-item-decorated">
@@ -414,6 +420,42 @@
                 <div class="item-name">Grillwürste mit Pommes</div>
                 <div class="item-details">Ketchup oder Mayo</div>
                 <div class="item-price">€8,50 <span class="item-allergens">(M, L, F)</span></div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Steak, Saucen, Beilagen, Dessert -->
+        <div class="column" style="padding-top: 90px;">
+            <div class="section-title">Steak</div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Filet Steak</div>
+                <div class="item-details">Lady 180g | Gentleman 250g</div>
+                <div class="item-price">€30,00 | €39,50</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Rib Eye 300g</div>
+                <div class="item-price">€39,50</div>
+            </div>
+
+            <div class="section-title">Saucen</div>
+
+            <div class="menu-item beilagen-grid">
+                <div class="item-details">
+                    Pfeffersauce <span class="price-gold">€3,70</span> | Chimichurri <span class="price-gold">€3,10</span><br>
+                    Trüffel-Mayo | Rosmarin-Aioli · je <span class="price-gold">€3,00</span><br>
+                    Mayonnaise & Ketchup <span class="price-gold">€1,00</span> | Sauerrahm & Peperoni <span class="price-gold">€1,50</span><br>
+                    Brot <span class="price-gold">€1,50</span>
+                </div>
+            </div>
+
+            <div class="section-title">Beilagen</div>
+
+            <div class="menu-item beilagen-grid">
+                <div class="item-details">
+                    Pommes <span class="price-gold">€5,50</span> | Trüffel-Pommes <span class="price-gold">€6,50</span> | Aioli-Pommes <span class="price-gold">€6,00</span><br>
+                    Rosmarinkartoffeln <span class="price-gold">€5,50</span> | Speckbohnen <span class="price-gold">€5,50</span> | Grillgemüse <span class="price-gold">€5,00</span>
+                </div>
             </div>
 
             <div class="section-title">Dessert</div>
@@ -435,35 +477,10 @@
                 <div class="item-details">Ricottakrapfen | Heidelbeer-Ragout | Limette | Kokossauce</div>
                 <div class="item-price">€9,00 <span class="item-allergens">(A, C, G, O)</span></div>
             </div>
-
-            <div class="section-title">Beilagen</div>
-
-            <div class="menu-item beilagen-grid">
-                <div class="item-details">
-                    Pommes €5,50 | Trüffel-Pommes €6,50 | Aioli-Pommes €6,00<br>
-                    Rosmarinkartoffeln €5,50 | Speckbohnen €5,50 | Grillgemüse €5,00
-                </div>
-            </div>
-
-            <div class="section-title">Saucen</div>
-
-            <div class="menu-item beilagen-grid">
-                <div class="item-details">
-                    Pfeffersauce €3,70 | Chimichurri €3,10<br>
-                    Trüffel-Mayo | Chipotle-Mayo | Rosmarin-Aioli · je €3,00<br>
-                    Mayonnaise & Ketchup €1,00 | Sauerrahm & Peperoni €1,50<br>
-                    Brot €1,50
-                </div>
-            </div>
         </div>
 
     </div>
 
-    <!-- Footer -->
-    <div class="menu-footer">
-        Einige Gerichte können Allergene enthalten. Bitte informieren Sie unser Personal über eventuelle Lebensmittelallergien.<br>
-        Alle Preise in Euro inkl. 10% MwSt.
-    </div>
 </div>
 
 </body>
