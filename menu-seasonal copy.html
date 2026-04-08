@@ -20,7 +20,7 @@
         body {
             font-family: 'Urbanist', sans-serif;
             color: #2c2c2c;
-            background: #ffffff;
+            background: transparent;
             line-height: 1.4;
         }
 
@@ -33,6 +33,13 @@
             display: flex;
             flex-direction: column;
             page-break-after: always;
+            break-after: page;
+            overflow: hidden;
+        }
+
+        .menu-page:last-child {
+            page-break-after: auto;
+            break-after: auto;
         }
 
         /* Corner decorations */
@@ -56,7 +63,7 @@
         .menu-logo {
             width: 270px;
             height: auto;
-            margin: 0 auto 0;
+            margin: -10px auto -20px;
             display: block;
         }
 
@@ -68,6 +75,7 @@
             text-transform: uppercase;
             color: #2c2c2c;
             line-height: 1.2;
+            margin-top: -10px;
         }
 
         /* Layout */
@@ -220,8 +228,24 @@
         }
 
         @media print {
-            body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-            .menu-page { border: none; }
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .menu-page {
+                border: none;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: always;
+                break-after: page;
+            }
+            .menu-page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
         }
     </style>
 </head>
@@ -239,8 +263,8 @@
     <!-- Content -->
     <div class="content-area">
 
-        <!-- COLUMNA IZQUIERDA: Vorspeise, Salat -->
-        <div class="column" style="padding-top: 70px;">
+        <!-- COLUMNA IZQUIERDA: Vorspeise, Salat, Suppe -->
+        <div class="column" style="padding-top: 20px;">
             <div class="section-title">Vorspeise</div>
 
             <div class="menu-item menu-item-decorated">
@@ -256,9 +280,9 @@
             </div>
 
             <div class="menu-item">
-                <div class="item-name">Gebeizte Zander</div>
-                <div class="item-details">Sauerrahm | Rote Bete | Dill | Gurken</div>
-                <div class="item-price">€16,50 <span class="item-allergens">(A, G, O, L)</span></div>
+                <div class="item-name">Gebackene Champignons</div>
+                <div class="item-details">Mit Sauce Tartare</div>
+                <div class="item-price">€9,90 <span class="item-allergens">(A, C, G, D, M, L)</span></div>
             </div>
 
             <div class="section-title">Salat</div>
@@ -277,25 +301,21 @@
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Vogerlsalat</div>
                 <div class="item-details">Kartoffel | Speck | Ei (gekocht)</div>
-                <div class="item-price">€14,90</div>
+                <div class="item-price">€14,90 <span class="item-allergens">(C)</span></div>
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item menu-item-decorated">
                 <div class="item-name">Camembert-Salat</div>
                 <div class="item-details">Gemischter Salat | Karamellisierter Camembert | Walnüsse | Balsamico-Senf-Vinaigrette</div>
                 <div class="item-price">€13,90 <span class="item-allergens">(G, O, M, L, H)</span></div>
             </div>
 
-        </div>
-
-        <!-- COLUMNA DERECHA: Suppe, Pasta, Wiener Klassiker -->
-        <div class="column col-offset-top">
             <div class="section-title">Suppe</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Kräftige Rindsuppe</div>
                 <div class="item-details">Mit Frittaten | Mit Kaspressknödel</div>
-                <div class="item-price">€5,90 | €6,50</div>
+                <div class="item-price">€5,90 | €6,50 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="menu-item">
@@ -304,6 +324,10 @@
                 <div class="item-price">€5,90 <span class="item-allergens">(A, C, G, L, O)</span></div>
             </div>
 
+        </div>
+
+        <!-- COLUMNA DERECHA: Pasta, Burger, Wiener Klassiker -->
+        <div class="column col-offset-top">
             <div class="section-title">Pasta</div>
 
             <div class="menu-item menu-item-decorated">
@@ -312,10 +336,22 @@
                 <div class="item-price">€18,50 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item menu-item-decorated">
                 <div class="item-name">Ravioli mit Pilzfüllung</div>
                 <div class="item-details">Sautierter Babyspinat | Leichte Trüffelrahmsauce</div>
                 <div class="item-price">€17,50 <span class="item-allergens">(A, G, O, L)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Fettuccine Frutti di Mare</div>
+                <div class="item-details">Meeresfrüchte | Tomatensauce | Knoblauch | Petersilie</div>
+                <div class="item-price">€18,90 <span class="item-allergens">(A, B, C, D, G, O)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Fettuccine Carbonara</div>
+                <div class="item-details">Speck | Ei | Parmesan | Sahne</div>
+                <div class="item-price">€16,90 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="section-title">Burger</div>
@@ -329,7 +365,7 @@
             <div class="section-title">Wiener Klassiker</div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Schweineschnitzel Wiener Art</div>
+                <div class="item-name">Schweine- / Hühnerschnitzel Wiener Art</div>
                 <div class="item-details">Mit Pommes | Preiselbeeren | Zitrone<br>oder mit Petersilienkartoffeln | Preiselbeeren | Zitrone</div>
                 <div class="item-price">€17,50 <span class="item-allergens">(A, C, G)</span></div>
             </div>
@@ -373,9 +409,9 @@
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Sarmale</div>
-                <div class="item-details">Krautroulade gefüllt mit Faschiertem | Polenta | Geräucherte Tomatensauce | Sauerrahm-Espuma | Dillöl</div>
-                <div class="item-price">€17,50 <span class="item-allergens">(A, G, O, F)</span></div>
+                <div class="item-name">Grillteller</div>
+                <div class="item-details">Rumpsteak | Schweinrücken | Hendlbrust | Grillgemüse | Pommes | Chimichurri</div>
+                <div class="item-price">€21,80 <span class="item-allergens">(G, L, O)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
@@ -385,15 +421,15 @@
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Saramura de Pește</div>
-                <div class="item-details">Zander auf cremigem Frühlings-Risotto | Geröstete Tomaten-Paprika-Salzlake | Zucchini | Weißwein-Schaum</div>
-                <div class="item-price">€26,50 <span class="item-allergens">(A, O, D, L)</span></div>
+                <div class="item-name">Lachsfilet</div>
+                <div class="item-details">Cremiges Frühlings-Risotto | Zitrone | Salbei | Kaiserschoten</div>
+                <div class="item-price">€26,50 <span class="item-allergens">(A, D, G, O, L)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Ciulama de Pui</div>
-                <div class="item-details">Maishendl Supreme | Kartoffel-Sellerie-Püree | Champignons | Cremige Trüffelsauce</div>
-                <div class="item-price">€23,50 <span class="item-allergens">(A, C, G, O, L)</span></div>
+                <div class="item-name">Paprikahendl</div>
+                <div class="item-details">Maishendl-Brustfilet | Cremige Polenta | Paprika-Letscho | Jus</div>
+                <div class="item-price">€23,50 <span class="item-allergens">(A, G, L, M, O)</span></div>
             </div>
 
             <div class="menu-item">
@@ -423,13 +459,23 @@
             </div>
         </div>
 
-        <!-- COLUMNA DERECHA: Steak, Saucen, Beilagen, Dessert -->
+        <!-- COLUMNA DERECHA: Penne, Steak, Saucen, Beilagen, Dessert -->
         <div class="column" style="padding-top: 90px;">
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Penne Bolognese</div>
+                <div class="item-price">€6,90 <span class="item-allergens">(A, C, L, M, O)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Penne Tomatensauce</div>
+                <div class="item-price">€5,90 <span class="item-allergens">(A, L, O)</span></div>
+            </div>
+
             <div class="section-title">Steak</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Filet Steak</div>
-                <div class="item-details">Lady 180g | Gentleman 250g</div>
+                <div class="item-details">Klaushof 4x AT<br>Lady 180g | Gentleman 250g</div>
                 <div class="item-price">€30,00 | €39,50</div>
             </div>
 
@@ -475,7 +521,7 @@
             <div class="menu-item">
                 <div class="item-name">Papanași</div>
                 <div class="item-details">Ricottakrapfen | Heidelbeer-Ragout | Limette | Kokossauce</div>
-                <div class="item-price">€9,00 <span class="item-allergens">(A, C, G, O)</span></div>
+                <div class="item-price">€7,90 <span class="item-allergens">(A, C, G, O)</span></div>
             </div>
         </div>
 
