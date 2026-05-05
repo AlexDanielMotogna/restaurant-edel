@@ -3732,7 +3732,7 @@ body.visible-sidebar {
 
 .ig-post-section .instagram-media {
   margin: 0 auto !important;
-  min-height: 600px !important;
+  min-height: 800px !important;
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
