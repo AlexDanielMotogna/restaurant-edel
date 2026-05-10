@@ -9,8 +9,8 @@
 <meta name="description" content="Restaurant Edel eröffnet zweite Saison mit Drei-Länder-Karte. Falstaff-Küchenchef Angelo Nicola startet am 30. Mai 2026 mit rumänisch-mediterran-steirischer Fusion in Gössendorf bei Graz.">
 <meta name="keywords" content="Restaurant Edel, Presseartikel, Pressemitteilung, Konzept-Relaunch, Angelo Nicola, Falstaff, rumänische Küche, mediterrane Küche, steirische Küche, Drei-Länder-Karte, Iuhas Gastronomie, Gössendorf, Graz, Restaurant Steiermark, Fusion Küche, zweite Saison, Eröffnung 30. Mai 2026, rumänisch, steirisch, mediterran">
 <meta name="author" content="Restaurant Edel">
-<meta name="robots" content="noindex, nofollow">
-<meta name="googlebot" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
 <meta name="language" content="German">
 <meta name="geo.region" content="AT-6">
 <meta name="geo.placename" content="Gössendorf">
@@ -199,14 +199,55 @@ body {
     }
 }
 
-/* Press Release: artículo centrado, sin sidebar */
+/* Press Release: artículo centrado, ancho fijo unificado */
 .press-article-wrapper {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Forzar el blog-single y todos sus hijos al mismo ancho */
+.press-article-wrapper .blog-single {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 !important;
+}
+
+/* TODO el contenido directo del article sin padding extra */
+.press-article-wrapper .blog-single > *,
+.press-article-wrapper .press-header,
+.press-article-wrapper .main_img,
+.press-article-wrapper .info,
+.press-article-wrapper .quote_block,
+.press-article-wrapper .blog_authore,
+.press-article-wrapper .row.clearfix {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Las imágenes ocupan el 100% real del contenedor */
+.press-article-wrapper .main_img img,
+.press-article-wrapper .image img {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+/* El quote_block sí tiene padding interno (es la caja del quote) */
+.press-article-wrapper .quote_block {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
 }
 
 .press-article-wrapper .blog_inner_pannel {
     background: transparent;
+    padding: 0 !important;
 }
 
 /* Forzar colores claros para press release sobre fondo verde */
@@ -324,6 +365,75 @@ body {
 .press-article-wrapper .press-table a {
     color: #c7a36c !important;
     word-break: break-all;
+}
+
+/* Mobile: optimizar para que el hero image quede above the fold */
+@media (max-width: 767px) {
+    /* Logo del header más pequeño en móvil */
+    .main-header .logo img {
+        max-width: 90px !important;
+        height: auto !important;
+    }
+
+    .main-header .header-upper {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    /* Spacer superior: empuja el contenido para que no se solape con el header fijo */
+    .press-spacer-top {
+        height: 110px !important;
+    }
+
+    .press-detail-section {
+        padding-top: 30px !important;
+    }
+
+    /* Header del press release: títulos más pequeños */
+    .press-article-wrapper .press-header {
+        margin-bottom: 12px !important;
+    }
+
+    .press-article-wrapper .press-header h1 {
+        font-size: 22px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .press-article-wrapper .press-header > div:first-child {
+        font-size: 11px !important;
+        letter-spacing: 2px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .press-article-wrapper .press-header p {
+        font-size: 13px !important;
+        margin: 0 auto 18px !important;
+        line-height: 1.5 !important;
+    }
+
+    .press-article-wrapper .press-header > p:last-child {
+        font-size: 11px !important;
+        margin: 0 0 15px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Reducir tamaño general de fuentes */
+    .press-article-wrapper .info p,
+    .press-article-wrapper p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+
+    .press-article-wrapper h3 {
+        font-size: 20px !important;
+        margin: 30px 0 12px !important;
+    }
+
+    /* Reducir padding del wrapper */
+    .press-article-wrapper {
+        padding: 0 12px !important;
+    }
 }
 
 /* Mobile: tablas se convierten en stack vertical */
@@ -466,6 +576,7 @@ body {
                                 <li><a href="index.html#mittagsmenu">Mittagsmenü</a></li>
                                 <li><a href="index.html#bewertungen">Bewertungen</a></li>
                                 <li><a href="index.html#events">Events</a></li>
+                                <li class="current"><a href="blog-single-post.html">Presse</a></li>
                                 <li><a href="index.html#kontakt">Kontakt</a></li>
                             </ul>
                         </nav>
@@ -530,6 +641,7 @@ body {
                 <li><a href="index.html#mittagsmenu">Mittagsmenü</a></li>
                 <li><a href="index.html#bewertungen">Bewertungen</a></li>
                 <li><a href="index.html#events">Events</a></li>
+                <li><a href="blog-single-post.html">Presse</a></li>
                 <li><a href="index.html#kontakt">Kontakt</a></li>
             </ul>
         </div><!-- /.Side-menu -->
@@ -569,10 +681,10 @@ body {
     <!--End Hidden Bar -->
 
     <!-- Spacer for fixed header -->
-    <div style="height: 120px;"></div>
+    <div class="press-spacer-top" style="height: 120px;"></div>
 
     <!-- Blog Details Block Start-->
-    <section class="blog_detail_section section-kt" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+    <section class="blog_detail_section press-detail-section" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" style="padding-top: 30px; padding-bottom: 60px;">
       <div class="auto-container">
         <div class="press-article-wrapper">
           <div class="blog_inner_pannel">
