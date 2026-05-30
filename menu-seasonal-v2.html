@@ -29,9 +29,10 @@
             height: 297mm;
             background: transparent;
             position: relative;
-            padding: 0mm 12mm 10mm 12mm;
+            padding: 18mm 12mm 10mm 12mm;
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
             page-break-after: always;
             break-after: page;
             overflow: hidden;
@@ -69,7 +70,7 @@
         .romanian-subtitle {
             font-family: 'Fraunces', serif;
             font-style: italic;
-            font-size: 13px;
+            font-size: 22px;
             color: #8B6914;
             text-align: center;
             margin-top: 4px;
@@ -79,13 +80,13 @@
 
         /* Layout */
         .content-area {
-            flex: 1;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12mm;
             position: relative;
             z-index: 1;
-            align-items: center;
+            align-items: start;
+            align-content: start;
             justify-content: center;
             justify-items: center;
         }
@@ -252,7 +253,7 @@
 
         .story-text {
             font-family: 'Urbanist', sans-serif;
-            font-size: 11px;
+            font-size: 13px;
             color: #5a5a5a;
             line-height: 1.55;
             text-align: justify;
@@ -293,43 +294,47 @@
 <!-- ============= PÁGINA 1: CARA ============= -->
 <div class="menu-page">
 
-    <div class="content-area" style="margin-top: 0;">
+    <div class="menu-header">
+        <img src="images/resource/sidebar-logo.png" class="menu-logo" alt="Restaurant Edel" onerror="this.style.display='none'">
+        <div class="menu-main-title">Speisekarte</div>
+    </div>
 
-        <!-- COLUMNA IZQUIERDA: Vorspeise, Salat, Suppe -->
-        <div class="column column-compact" style="align-self: center;">
+    <div class="content-area" style="margin-top: 50px;">
+
+        <!-- COLUMNA IZQUIERDA: Vorspeise, Suppe, Salat -->
+        <div class="column column-compact" style="align-self: start;">
             <div class="section-title">Vorspeise</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Beef Tatar (120g)</div>
                 <div class="item-details">Trüffel-Mayonnaise | Eingelegtes Gemüse | Wachtelei | Balsamico | Toastbrot | Butter</div>
-                <div class="item-price">€15,50 <span class="item-allergens">(A, C, D, M, O, G, L)</span></div>
+                <div class="item-price">€17,50 <span class="item-allergens">(A, C, O, G, L)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Melanzani-Salat</div>
-                <div class="item-details">Tomaten-Paprika-Chutney | Rucola-Zitronen-Pesto | Gebäck</div>
-                <div class="item-price">€13,90 <span class="item-allergens">(A, B, G, O)</span></div>
-                <div class="item-extra">+ 3 Garnelen <span class="price-gold">€17,90</span></div>
+                <div class="item-name">Osso Collo</div>
+                <div class="item-details">Geräucherter Schweinsschopf | Weiße-Bohnen-Hummus | Gegrillte Paprika | Eingelegtes Gemüse | Gebäck</div>
+                <div class="item-price">€16,90 <span class="item-allergens">(A, O, L)</span></div>
             </div>
 
             <div class="menu-item">
                 <div class="item-name">Burrata „Mal Anders"</div>
-                <div class="item-details">Bunte Tomaten | Burrata | Pistazien | Zitronen-Basilikum-Vinaigrette | Brotchips</div>
-                <div class="item-price">€14,90 <span class="item-allergens">(A, G, O, H)</span></div>
+                <div class="item-details">Bunte Tomaten | Burrata | Kürbiskerne | Zitronen-Basilikum-Vinaigrette | Brotchips</div>
+                <div class="item-price">€15,90 <span class="item-allergens">(A, G, O, H)</span></div>
             </div>
 
             <div class="section-title">Suppe</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Kräftige Rindsuppe</div>
-                <div class="item-details">Mit Frittaten | Mit hausgemachten Kaspressknödeln</div>
-                <div class="item-price">€5,20 | €5,90 <span class="item-allergens">(A, B, G, L)</span></div>
+                <div class="item-details">Mit Frittaten &amp; Wurzelgemüse | Mit Leberknödel &amp; Wurzelgemüse</div>
+                <div class="item-price">€5,20 | €5,90 <span class="item-allergens">(A, G, L)</span></div>
             </div>
 
             <div class="menu-item">
-                <div class="item-name">Karfiol-Cremesuppe</div>
-                <div class="item-details">Schwarzbrot-Croutons | Crème Fraîche | Zitrone | Paprikaöl</div>
-                <div class="item-price">€6,50 <span class="item-info">Vegan möglich</span> <span class="item-allergens">(A, G, L, O)</span></div>
+                <div class="item-name">Knoblauch-Cremesuppe</div>
+                <div class="item-details">Brotcroutons | Petersilie</div>
+                <div class="item-price">€6,20 <span class="item-allergens">(A, G, L, O)</span></div>
             </div>
 
             <div class="section-title">Salat</div>
@@ -343,72 +348,60 @@
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Backhendl-Salat</div>
                 <div class="item-details">Hühnerkeule | Kürbiskern-Panade | Kartoffelsalat | Vogerlsalat</div>
-                <div class="item-price">€14,90 <span class="item-allergens">(A, C, O, G)</span></div>
-            </div>
-
-            <div class="menu-item menu-item-decorated">
-                <div class="item-name">Steirischer Rindfleischsalat</div>
-                <div class="item-details">Salatherzen | Käferbohnen-Creme | Kernöl-Espuma | Paprika-Relish | Wurzelbrot</div>
-                <div class="item-price">€15,90 <span class="item-allergens">(A, G, O)</span></div>
+                <div class="item-price">€15,90 <span class="item-allergens">(A, C, O, G)</span></div>
             </div>
 
             <div class="menu-item">
-                <div class="item-name">Gebackener Camembert-Salat</div>
-                <div class="item-details">Gemischter Salat | Walnüsse | Apfel | Radieschen</div>
-                <div class="item-price">€13,90 <span class="item-allergens">(A, C, G, O, H)</span></div>
+                <div class="item-name">Vogerlsalat</div>
+                <div class="item-details">Vogerlsalat | Bratkartoffeln | Speck | Gekochtes Ei</div>
+                <div class="item-price">€13,90 <span class="item-allergens">(A, G, O)</span></div>
             </div>
         </div>
 
         <!-- COLUMNA DERECHA: Hauptspeise -->
-        <div class="column column-compact" style="align-self: center;">
+        <div class="column column-compact" style="align-self: start;">
             <div class="section-title">Hauptspeise</div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Gebratener Zander</div>
-                <div class="item-details">Hausgemachte Gnocchi | Cremiges Kohlrabi | Kerbel-Gremolata | Marinierte Radieschen</div>
-                <div class="item-price">€19,80 <span class="item-allergens">(A, D, G, O)</span></div>
-            </div>
-
-            <div class="menu-item menu-item-decorated">
                 <div class="item-name">Gegrillte Calamari</div>
-                <div class="item-details">Polenta-Schnitte | Grillgemüse | Knoblauchbutter | Gebäck</div>
-                <div class="item-price">€17,80 <span class="item-allergens">(A, B, G)</span></div>
+                <div class="item-details">Grillgemüse | Kräuterbutter | Knoblauchbrot</div>
+                <div class="item-price">€18,90 <span class="item-allergens">(A, B, G)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Grillteller</div>
-                <div class="item-details">Hühnerfilet | Schweinefilet | Grillwürstel | Grillgemüse | Bratkartoffeln | Kräuterbutter</div>
-                <div class="item-price">€19,50 <span class="item-allergens">(G, L, O)</span></div>
+                <div class="item-details">Rindfleisch | Hühnerfleisch | Schweinefleisch | Grillwürstel | Grillspeck | Grillgemüse | Bratkartoffeln | Kräuterbutter</div>
+                <div class="item-price">€21,50 <span class="item-allergens">(G, L, O)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Zartes Kalbsbutterschnitzel</div>
-                <div class="item-details">Erdäpfelpüree | Schmorgemüse | Petersil-Creme | Kapernsauce</div>
-                <div class="item-price">€17,50 <span class="item-allergens">(A, C, G, O, L, M)</span></div>
+                <div class="item-name">Gegrilltes Hüftsteak</div>
+                <div class="item-details">Bratkartoffeln | Pfeffersauce</div>
+                <div class="item-price">€24,50 <span class="item-allergens">(G, O)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Maishendlfilet Supreme</div>
-                <div class="item-details">Violetter Kartoffelstampf | Buttermilch | Karotten-Rösti | Buchenpilze | Jus</div>
-                <div class="item-price">€18,90 <span class="item-allergens">(C, G, L, M, O)</span></div>
+                <div class="item-details">Violetter Kartoffelstampf | Rote Spitzpaprika | Buchenpilze | Jus</div>
+                <div class="item-price">€19,90 <span class="item-allergens">(C, G, L, M, O)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Geröstete Hühnerleber</div>
-                <div class="item-details">Cremige weiße Polenta | Zwiebelsaft | Alter Balsamico | Salbei</div>
-                <div class="item-price">€14,80 <span class="item-allergens">(G, L, M, O)</span></div>
+                <div class="item-details">Cremige Polenta | Zwiebelsaft | Alter Balsamico | Salbei</div>
+                <div class="item-price">€16,90 <span class="item-allergens">(G, L, M, O)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Zweierlei vom Vulkanlandschwein</div>
-                <div class="item-details">Schweinebauch-Roulade | Geschmorte Bäckerl | Lauwarmer Krautsalat | Knödel | Speck</div>
-                <div class="item-price">€16,90 <span class="item-allergens">(A, C, G, O, M)</span></div>
+                <div class="item-name">Edel Burger</div>
+                <div class="item-details">Brioche | Burgersauce | Beef Patty 180g | Bergkäse | Tomaten | Salat | Speck<br>Mit Pommes, Ketchup oder Mayo</div>
+                <div class="item-price">€18,90 <span class="item-allergens">(A, G, O, L, F, M)</span></div>
             </div>
 
             <div class="menu-item">
-                <div class="item-name">Gebackener Karfiol</div>
-                <div class="item-details">Sauce Tartare | Violette Kartoffel-Creme</div>
-                <div class="item-price">€14,50 <span class="item-allergens">(A, C, G, D, M, L)</span></div>
+                <div class="item-name">Gebackene Champignons</div>
+                <div class="item-details">Sauce Tartare | Radieschen | Eingelegte Zwiebeln</div>
+                <div class="item-price">€13,90 <span class="item-allergens">(A, C, G, D, M, L)</span></div>
             </div>
         </div>
 
@@ -418,43 +411,42 @@
 <!-- ============= PÁGINA 2: VERSO ============= -->
 <div class="menu-page">
 
-    <div class="content-area" style="margin-top: 0;">
+    <div class="menu-header">
+        <img src="images/resource/sidebar-logo.png" class="menu-logo" alt="Restaurant Edel" onerror="this.style.display='none'">
+        <div class="menu-main-title">Speisekarte</div>
+    </div>
+
+    <div class="content-area" style="margin-top: 50px;">
 
         <!-- COLUMNA IZQUIERDA: Pasta, Wiener Klassiker -->
-        <div class="column" style="align-self: center;">
+        <div class="column" style="align-self: start;">
             <div class="section-title">Pasta</div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Steirische Carbonara</div>
                 <div class="item-details">Hausgemachte Eiernockerl | Bergkäse | Bauchspeck | Stundenei | Geschmorter Lauch</div>
-                <div class="item-price">€16,90 <span class="item-allergens">(A, C, G)</span></div>
+                <div class="item-price">€17,90 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="menu-item">
                 <div class="item-name">Handgemachte Ravioli</div>
                 <div class="item-details">Spinat-Ricotta-Füllung | Braune Butter | Brokkoli | Pecorino | Salbei</div>
-                <div class="item-price">€15,80 <span class="item-allergens">(A, C, G)</span></div>
-                <div class="item-extra">+ 3 Garnelen <span class="price-gold">€19,80</span></div>
+                <div class="item-price">€16,80 <span class="item-allergens">(A, C, G)</span></div>
+                <div class="item-extra">+ Geräucherter Schweinsschopf <span class="price-gold">€18,90</span></div>
             </div>
 
             <div class="section-title">Wiener Klassiker</div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Edel Burger</div>
-                <div class="item-details">Brioche | Beef Patty 180g | Bergkäse | Tomatenchutney | Salat | Speck<br>Mit Pommes, Ketchup oder Mayo</div>
-                <div class="item-price">€18,50 <span class="item-allergens">(A, G, O, L, F, M)</span></div>
-            </div>
-
-            <div class="menu-item menu-item-decorated">
-                <div class="item-name">Schweine- / Hühnerschnitzel Wiener Art</div>
-                <div class="item-details">Mit Pommes | Preiselbeeren | Zitrone<br>oder mit Petersilienkartoffeln</div>
-                <div class="item-price">€16,50 <span class="item-allergens">(A, C, G)</span></div>
+                <div class="item-name">Schweineschnitzel Wiener Art</div>
+                <div class="item-details">Mit Pommes | Preiselbeeren | Zitrone<br>oder Petersilienkartoffeln<br>oder Erbsenreis</div>
+                <div class="item-price">€18,50 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
                 <div class="item-name">Cordon Bleu vom Schwein</div>
-                <div class="item-details">Gefüllt mit Bauernschinken | Bergkäse | Jungzwiebel<br>Mit Pommes oder Petersilienkartoffeln | Preiselbeeren | Zitrone</div>
-                <div class="item-price">€17,50 <span class="item-allergens">(A, C, G)</span></div>
+                <div class="item-details">Gefüllt mit Bauernschinken | Bergkäse | Jungzwiebel<br>Mit Pommes, Petersilienkartoffeln oder Erbsenreis | Preiselbeeren | Zitrone</div>
+                <div class="item-price">€19,50 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="menu-item">
@@ -465,7 +457,7 @@
         </div>
 
         <!-- COLUMNA DERECHA: Kleiner Hunger, Dessert -->
-        <div class="column" style="align-self: center;">
+        <div class="column" style="align-self: start;">
             <div class="section-title">Kleiner Hunger</div>
 
             <div class="menu-item menu-item-decorated">
@@ -483,21 +475,31 @@
             <div class="section-title">Dessert</div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Steiremisu</div>
-                <div class="item-details">Tiramisu mit Kürbiskernöl | Vanilleeis</div>
-                <div class="item-price">€7,90 <span class="item-allergens">(A, C, G, O)</span></div>
+                <div class="item-name">Eisknödel mit Marillenkern</div>
+                <div class="item-details">Beeren-Ragout | Minze</div>
+                <div class="item-price">€10,50 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="menu-item menu-item-decorated">
-                <div class="item-name">Grießflammerie</div>
-                <div class="item-details">Himbeer-Sorbet</div>
-                <div class="item-price">€6,70 <span class="item-allergens">(A, C, G)</span></div>
+                <div class="item-name">Kaiserschmarrn</div>
+                <div class="item-details">Vanilleeis | Apfelmus</div>
+                <div class="item-price">€9,50 <span class="item-allergens">(A, C, G)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Eispalatschinken</div>
+                <div class="item-details">Vanilleeis | Schokoladensauce | Schlagobers</div>
+                <div class="item-price">€6,90 <span class="item-allergens">(A, C, G)</span></div>
+            </div>
+
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Marillen-Palatschinken</div>
+                <div class="item-price">€5,90 <span class="item-allergens">(A, C, G)</span></div>
             </div>
 
             <div class="menu-item">
-                <div class="item-name">Hausgemachter Apfelstrudel</div>
-                <div class="item-details">Vanille-Creme oder Vanille-Eis</div>
-                <div class="item-price">€6,50 <span class="item-allergens">(A, C, G)</span></div>
+                <div class="item-name">Nutella-Palatschinken</div>
+                <div class="item-price">€5,90 <span class="item-allergens">(A, C, G, H)</span></div>
             </div>
         </div>
 
@@ -507,44 +509,58 @@
 <!-- ============= PÁGINA 3: ESPECIALIDADES RUMANAS ============= -->
 <div class="menu-page">
 
-    <div class="menu-header" style="margin-top: 20px; margin-bottom: 0;">
-        <div class="romanian-subtitle">Rumänische Spezialitäten</div>
+    <div class="menu-header">
+        <img src="images/resource/sidebar-logo.png" class="menu-logo" alt="Restaurant Edel" onerror="this.style.display='none'">
+        <div class="menu-main-title">Speisekarte</div>
+        <div class="romanian-subtitle" style="margin-top: 8px;">Rumänische Traditionelle Gerichte</div>
     </div>
 
-    <div style="flex: 1; padding: 0 8mm; display: flex; flex-direction: column; gap: 18px; align-items: center; justify-content: flex-start; margin-top: 30px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; margin-top: 60px;">
 
-        <div class="dish-with-story">
-            <div class="item-name">Ciorbă de Burtă</div>
-            <div class="item-details">Klare Kuttelnsuppe mit Kuttelnstücken | Sauerrahm | Pfefferoni | Gebäck</div>
-            <div class="item-price">€5,90 <span class="item-allergens">(A, C, G, O)</span></div>
-            <p class="story-text">Die rumänische Kuttelsuppe hat ihre Wurzeln in der osmanischen Küche, insbesondere in der „işkembe çorbası". Während der Zeit des Osmanischen Reichs gelangte das Rezept in die rumänischen Regionen und wurde dort weiterentwickelt. Die heutige Variante zeichnet sich durch ihre cremige Konsistenz mit Sahne, Ei und Knoblauch sowie ihren leicht säuerlichen Geschmack aus und gilt als Klassiker der rumänischen Küche.</p>
-        </div>
+        <!-- COLUMNA ÚNICA -->
+        <div class="column" style="width: 100%; max-width: 110mm;">
 
-        <div class="stories-divider"></div>
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Ciorbă de Burtă</div>
+                <div class="item-details">Klare Kuttelnsuppe mit Kuttelnstücken | Sauerrahm | Pfefferoni | Gebäck</div>
+                <div class="item-price">€7,90 <span class="item-allergens">(A, C, G, O)</span></div>
+            </div>
 
-        <div class="dish-with-story">
-            <div class="item-name">Mici</div>
-            <div class="item-details">Gegrillte rumänische Ćevapčići mit Pommes | Senf | Gebäck</div>
-            <div class="item-price">€15,50 <span class="item-allergens">(A, L, M, F)</span></div>
-            <p class="story-text">Die Mititei stammen aus Rumänien und sollen im 19. Jahrhundert im berühmten Restaurant „Caru' cu Bere" in Bukarest entstanden sein. Der Legende nach ging dem Koch die Wursthülle aus, sodass er die gewürzte Fleischmasse direkt auf den Grill legte. So entstanden die „kleinen" (mititei) Grillröllchen, die schnell sehr beliebt wurden und heute als traditionelles rumänisches Gericht gelten.</p>
-        </div>
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Ciorbă Rădăuțeană</div>
+                <div class="item-details">Rahm-Hühnersuppe | Sauerrahm | Pfefferoni | Gebäck</div>
+                <div class="item-price">€7,90 <span class="item-allergens">(A, C, G, O)</span></div>
+            </div>
 
-        <div class="stories-divider"></div>
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Saramura de Pește</div>
+                <div class="item-details">Gebratener Zander in gerösteter Tomaten-Paprika-Salzlake | Cremige Polenta</div>
+                <div class="item-price">€21,50 <span class="item-allergens">(A, D, G, O)</span></div>
+            </div>
 
-        <div class="dish-with-story">
-            <div class="item-name">Cârnați la Grătar</div>
-            <div class="item-details">Gegrillte rumänische Würstel mit Pommes | Spiegelei | Jungzwiebeln | Senf | Gebäck</div>
-            <div class="item-price">€16,50 <span class="item-allergens">(A, C, L, M, F)</span></div>
-            <p class="story-text">Gegrillte Würste haben ihre Wurzeln in den alten europäischen Traditionen der Fleischverarbeitung, bei denen Fleisch durch Salzen, Würzen und Füllen in Naturdärme haltbar gemacht wurde. In Rumänien gehören Würste seit Jahrhunderten zur ländlichen Küche und werden nach regional überlieferten Rezepten hergestellt. Das Grillen über offener Glut entwickelte sich später zu einer beliebten Zubereitungsart, die den Würsten ein intensives Raucharoma und eine saftige Konsistenz verleiht.</p>
-        </div>
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Fasole cu Ciolan și Afumătură</div>
+                <div class="item-details">Knusprige Schweinsstelze | Weiße-Bohnen-Ragout | Rote Spitzpaprika | Karamellisierte weiße Zwiebeln</div>
+                <div class="item-price">€20,50 <span class="item-allergens">(L, M, O)</span></div>
+            </div>
 
-        <div class="stories-divider"></div>
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Mici</div>
+                <div class="item-details">Gegrillte rumänische Ćevapčići mit Pommes | Senf | Gebäck</div>
+                <div class="item-price">€16,50 <span class="item-allergens">(A, L, M, F)</span></div>
+            </div>
 
-        <div class="dish-with-story">
-            <div class="item-name">Papanași</div>
-            <div class="item-details">Quarkkrapfen | Pistazien-Creme | Amarena-Kirsche</div>
-            <div class="item-price">€7,90 <span class="item-allergens">(A, C, G, H, O)</span></div>
-            <p class="story-text">Gebratene Papanași sind eine moderne Interpretation eines traditionellen Desserts aus Rumänien, dessen Ursprung in der ländlichen Küche auf Basis von Frischkäse liegt. Ursprünglich wurden Papanași gekocht, doch die gebratene Variante entstand später unter dem Einfluss der mitteleuropäischen Küchen, insbesondere aus Österreich und Deutschland. Mit ihrer knusprigen Außenseite und dem weichen Inneren, traditionell serviert mit Sauerrahm und Marmelade, gelten gebratene Papanași heute als eines der beliebtesten Desserts der rumänischen Küche.</p>
+            <div class="menu-item menu-item-decorated">
+                <div class="item-name">Cârnați la Grătar</div>
+                <div class="item-details">Gegrillte rumänische Würstel mit Pommes | Spiegelei | Jungzwiebeln | Senf | Gebäck</div>
+                <div class="item-price">€17,50 <span class="item-allergens">(A, C, L, M, F)</span></div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Papanași</div>
+                <div class="item-details">Quarkkrapfen | Süßer Sauerrahm | Heidelbeermarmelade</div>
+                <div class="item-price">€7,90 <span class="item-allergens">(A, C, G, H, O)</span></div>
+            </div>
         </div>
 
     </div>
