@@ -54,6 +54,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
+<link href="css/weihnachten.css" rel="stylesheet">
 
 <!-- JSON-LD Schema.org Markup -->
 <script type="application/ld+json">
@@ -223,7 +224,7 @@ body {
             <div class="main-box clearfix">
                 <!--Logo-->
                 <div class="logo-box">
-                    <div class="logo"><a href="index.html" title="Restaurant Edel"><img src="images/logo.png" alt="image" title="Restaurant Edel"></a></div>
+                    <div class="logo"><a href="index.html" title="Restaurant Edel" class="xmas-logo"><img src="images/logo.png" alt="image" title="Restaurant Edel"><svg class="xmas-logo-star" viewBox="0 0 40 52" aria-hidden="true"><path d="M20 2 L22.2 15.8 L30 18 L22.2 20.2 L20 50 L17.8 20.2 L10 18 L17.8 15.8 Z" fill="#fff1b8"/><path d="M20 10 L21.2 16.8 L27 12 L22.4 18 L27 24 L21.2 19.2 L20 26 L18.8 19.2 L13 24 L17.6 18 L13 12 L18.8 16.8 Z" fill="#ffd36b" opacity=".85"/><circle cx="20" cy="18" r="2.6" fill="#fff"/></svg></a></div>
                 </div>
 
                 <div class="nav-box clearfix">
@@ -232,6 +233,7 @@ body {
                         <nav class="main-menu">
                             <ul class="navigation clearfix">
                                 <li class="current"><a href="#startseite">Startseite</a></li>
+                                <li><a href="#weihnachten">Weihnachten</a></li>
                                 <li><a href="#speisekarte">Speisekarte</a></li>
                                 <li><a href="#bewertungen">Bewertungen</a></li>
                                 <li><a href="#events">Events</a></li>
@@ -296,6 +298,7 @@ body {
         <div class="side-menu">
             <ul class="navigation clearfix">
                 <li><a href="#startseite">Startseite</a></li>
+                <li><a href="#weihnachten">Weihnachten</a></li>
                 <li><a href="#speisekarte">Speisekarte</a></li>
                 <li><a href="#bewertungen">Bewertungen</a></li>
                 <li><a href="#events">Events</a></li>
@@ -352,6 +355,7 @@ body {
                                 <div class="content">
                                     <div class="clearfix">
                                         <div class="inner">
+                                            <a href="#weihnachten" class="xmas-hero-pill"><span class="xmas-hero-pill-star" aria-hidden="true">✦</span> Weihnachtsfeiern 2026 – jetzt reservieren <span aria-hidden="true">→</span></a>
                                             <div class="subtitle"><span>Seit 2025 im Dienst</span></div>
                                             <h1>Außergewöhnliches Erlebnis</h1>
                                             <div class="text">Ein Geschmack der Perfektion in jedem Gericht gehobene Küche mit modernem Touch.</div>
@@ -394,6 +398,8 @@ body {
             </div>
         </div>
 
+        <canvas class="xmas-snow xmas-hero-snow" aria-hidden="true"></canvas>
+
         <a href="#" class="explore-menu-btn">
             <span class="icon"> <img src="images/resource/menu-badge-arrow.png" alt="image" title="image"> </span>
         </a>
@@ -401,18 +407,236 @@ body {
         <!-- Curve at bottom -->
         <!-- Default (desktop) curve -->
   		<svg class="bottom-curve curve-desktop" viewBox="0 0 1440 65" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    		<path fill="var(--color-one)" d="M0,65 C360,0 1080,0 1440,65 L1440,65 L0,65 Z" />
+    		<path class="xmas-curve-snow" fill="#f4f7f8" d="M0,65 C360,0 1080,0 1440,65 L1440,65 L0,65 Z" />
+    		<path fill="var(--color-one)" d="M0,65 C360,9 1080,9 1440,65 L1440,65 L0,65 Z" />
   		</svg>
 
   		<!-- Less curved version for tablets/mobile -->
 		<svg class="bottom-curve curve-mobile" viewBox="0 0 1440 65" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-		  <path fill="var(--color-one)" d="M0,65 C480,20 960,20 1440,65 L1440,65 L0,65 Z" />
+		  <path class="xmas-curve-snow" fill="#f4f7f8" d="M0,65 C480,20 960,20 1440,65 L1440,65 L0,65 Z" />
+		  <path fill="var(--color-one)" d="M0,65 C480,27 960,27 1440,65 L1440,65 L0,65 Z" />
 		</svg>
 
 
 
     </section>
     
+    <!--Weihnachtsfeiern Section (saisonal)-->
+    <section id="weihnachten" style="background-color: var(--color-one); padding: 80px 0 20px;">
+        <div class="auto-container">
+            <!--Weihnachtsfeiern Menü (Winter-Design: css/weihnachten.css + js/weihnachten.js)-->
+            <div class="xmas" id="weihnachtsfeiern">
+                <canvas class="xmas-snow" aria-hidden="true"></canvas>
+                <div class="xmas-stars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                <div class="xmas-lights" aria-hidden="true">
+                    <svg preserveAspectRatio="none"><path d="" fill="none" stroke="#2f3d3a" stroke-width="2"/></svg>
+                    <ul></ul>
+                </div>
+                <div class="xmas-ornament o1" aria-hidden="true"><i></i></div>
+                <div class="xmas-ornament o2" aria-hidden="true"><i></i></div>
+                <div class="xmas-ornament o3" aria-hidden="true"><i></i></div>
+                <div class="xmas-ornament o4" aria-hidden="true"><i></i></div>
+
+                <div class="xmas-inner">
+                    <div class="xmas-head xmas-reveal">
+                        <span class="xmas-kicker">Advent im Edel</span>
+                        <h3 class="xmas-title">Weihnachtsfeiern</h3>
+                        <div class="xmas-sub">Unser festliches Menü</div>
+                        <div class="xmas-divider" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17M12 2l-2.5 2.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5M3.3 7l3.4.9M3.3 7l.9-3.4M20.7 17l-3.4-.9M20.7 17l-.9 3.4M20.7 7l-3.4.9M20.7 7l-.9-3.4M3.3 17l3.4-.9M3.3 17l.9 3.4"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="xmas-courses">
+                        <div class="xmas-course vor xmas-reveal" style="--d: .05s;">
+                            <h4><b>I</b> Vorspeise</h4>
+                            <div class="xmas-dish">
+                                <h5>Beef Tatar „Asiatische Art“</h5>
+                                <p>Soja | Ingwer | Sesamöl | Gurke | Crème fraîche | Gekochtes Ei | Toastbrot</p>
+                            </div>
+                            <div class="xmas-or">oder</div>
+                            <div class="xmas-dish">
+                                <h5>Pilz-Tatar</h5>
+                                <p>Verschiedene Pilz-Variationen | Parmesan-Espuma | Sherry-Emulsion | Gepickeltes Gemüse | Schwarzbrot</p>
+                            </div>
+                        </div>
+
+                        <div class="xmas-course sup xmas-reveal" style="--d: .15s;">
+                            <h4><b>II</b> Suppe</h4>
+                            <div class="xmas-dish">
+                                <h5>Maronicreme-Suppe</h5>
+                                <p>Mit Rotkraut-Chips und Zitronenöl</p>
+                            </div>
+                        </div>
+
+                        <div class="xmas-course haupt xmas-reveal" style="--d: .25s;">
+                            <h4><b>III</b> Hauptspeise</h4>
+                            <div class="xmas-dish">
+                                <h5>Rosa gebratene Beiried</h5>
+                                <p>Spinat-Kartoffelstampf | Konfierte Karotten | Sauce Béarnaise | Jus</p>
+                            </div>
+                            <div class="xmas-or">oder</div>
+                            <div class="xmas-dish">
+                                <h5>In Kernöl pochiertes Buttermakrelenfilet</h5>
+                                <p>Beluga-Linsen | Rote Rüben | Beurre blanc | Rote Spitzpaprika | Sauerrahm-Kren</p>
+                            </div>
+                            <div class="xmas-or">oder</div>
+                            <div class="xmas-dish">
+                                <h5>Gerösteter Blumenkohl</h5>
+                                <p>Harissa | Marinierter Chinakohl | Mandel | Madras-Curry</p>
+                            </div>
+                        </div>
+
+                        <div class="xmas-course des xmas-reveal" style="--d: .1s;">
+                            <h4><b>IV</b> Dessert</h4>
+                            <div class="xmas-dish">
+                                <h5>Rotwein-Birne gefüllt mit Haselnuss-Nougatcreme</h5>
+                                <p>Zimt-Eis | Schokoladen-Crumble</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="xmas-cta xmas-reveal">
+                        <div class="xmas-tag"><strong>57 €</strong><span>pro Person</span></div>
+                        <div class="xmas-actions">
+                            <a class="xmas-btn" href="tel:+436765809878">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+                                Jetzt reservieren
+                            </a>
+                            <a class="xmas-btn xmas-btn-outline" href="mailto:office@restaurant-edel.at?subject=Anfrage%20Weihnachtsfeier&amp;body=Datum%3A%20%0APersonenanzahl%3A%20%0AName%20%2F%20Firma%3A%20%0ATelefon%3A%20">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                                Per E-Mail anfragen
+                            </a>
+                        </div>
+                        <div class="xmas-note">Für Ihre Weihnachtsfeier – wir bitten um Reservierung unter <a href="tel:+436765809878">+43 676 5809878</a> oder <a href="mailto:office@restaurant-edel.at?subject=Anfrage%20Weihnachtsfeier">office@restaurant-edel.at</a></div>
+                    </div>
+                </div>
+
+                <!-- Weihnachtsbäume & Geschenke -->
+                <div class="xmas-scene left" aria-hidden="true">
+                    <svg class="xmas-tree" viewBox="0 0 160 220">
+                        <defs>
+                            <linearGradient id="xmasTreeG" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0" stop-color="#1f5a45"/><stop offset=".5" stop-color="#2c7a5c"/><stop offset="1" stop-color="#174a39"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="70" y="180" width="20" height="30" rx="3" fill="#6b4226"/>
+                        <path d="M80 70 L140 185 Q80 196 20 185 Z" fill="url(#xmasTreeG)"/>
+                        <path d="M80 45 L128 140 Q80 150 32 140 Z" fill="url(#xmasTreeG)"/>
+                        <path d="M80 22 L114 95 Q80 103 46 95 Z" fill="url(#xmasTreeG)"/>
+                        <path d="M20 185 Q80 196 140 185 Q132 178 124 183 Q110 176 98 184 Q86 177 74 184 Q60 177 48 183 Q36 177 20 185Z" fill="#f4f7f8"/>
+                        <path d="M32 140 Q80 150 128 140 Q120 134 112 139 Q98 132 86 140 Q74 133 62 140 Q50 133 32 140Z" fill="#f4f7f8"/>
+                        <path d="M46 95 Q80 103 114 95 Q106 89 98 94 Q88 88 78 95 Q66 89 46 95Z" fill="#f4f7f8"/>
+                        <path d="M50 120 Q85 132 118 112" stroke="#c7a36c" stroke-width="1.5" fill="none" opacity=".8"/>
+                        <path d="M40 165 Q80 178 130 158" stroke="#c7a36c" stroke-width="1.5" fill="none" opacity=".8"/>
+                        <path d="M58 80 Q80 88 102 74" stroke="#c7a36c" stroke-width="1.5" fill="none" opacity=".8"/>
+                        <g class="xmas-twinkle">
+                            <circle cx="62" cy="86" r="4" fill="#ff6b5e"/><circle cx="98" cy="78" r="4" fill="#ffd36b"/>
+                            <circle cx="56" cy="124" r="4.5" fill="#ffd36b"/><circle cx="84" cy="128" r="4.5" fill="#7fe0c4"/><circle cx="112" cy="116" r="4.5" fill="#ff6b5e"/>
+                            <circle cx="46" cy="168" r="5" fill="#7fe0c4"/><circle cx="78" cy="176" r="5" fill="#ff6b5e"/><circle cx="106" cy="170" r="5" fill="#ffd36b"/><circle cx="128" cy="162" r="5" fill="#fff4dc"/>
+                        </g>
+                        <path class="xmas-star" d="M80 2 l5.3 10.8 11.9 1.7-8.6 8.4 2 11.8L80 29.1l-10.6 5.6 2-11.8-8.6-8.4 11.9-1.7z" fill="#ffd36b"/>
+                    </svg>
+                    <svg class="xmas-gift g1" viewBox="0 0 70 70">
+                        <rect x="6" y="26" width="58" height="42" rx="3" fill="#c8423b"/>
+                        <rect x="2" y="18" width="66" height="12" rx="3" fill="#d9524a"/>
+                        <rect x="30" y="18" width="10" height="50" fill="#f1d9a8"/>
+                        <path d="M35 18 C20 2 10 14 35 18 C60 14 50 2 35 18Z" fill="none" stroke="#f1d9a8" stroke-width="5" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="xmas-gift g2" viewBox="0 0 70 70">
+                        <rect x="10" y="30" width="50" height="38" rx="3" fill="#c7a36c"/>
+                        <rect x="6" y="22" width="58" height="11" rx="3" fill="#d4b47c"/>
+                        <rect x="30" y="22" width="10" height="46" fill="#18312e"/>
+                        <path d="M35 22 C22 8 14 18 35 22 C56 18 48 8 35 22Z" fill="none" stroke="#18312e" stroke-width="5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="xmas-scene right" aria-hidden="true">
+                    <svg class="xmas-gift g3" viewBox="0 0 70 70">
+                        <rect x="8" y="22" width="54" height="46" rx="3" fill="#2c7a5c"/>
+                        <rect x="4" y="14" width="62" height="12" rx="3" fill="#348a69"/>
+                        <rect x="30" y="14" width="10" height="54" fill="#c8423b"/>
+                        <rect x="8" y="40" width="54" height="8" fill="#c8423b"/>
+                        <path d="M35 14 C20 0 10 10 35 14 C60 10 50 0 35 14Z" fill="none" stroke="#c8423b" stroke-width="5" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="xmas-gift g4" viewBox="0 0 70 70">
+                        <rect x="14" y="34" width="42" height="34" rx="3" fill="#f5efe4"/>
+                        <rect x="10" y="27" width="50" height="10" rx="3" fill="#ffffff"/>
+                        <rect x="30" y="27" width="10" height="41" fill="#c7a36c"/>
+                        <path d="M35 27 C24 15 16 23 35 27 C54 23 46 15 35 27Z" fill="none" stroke="#c7a36c" stroke-width="5" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="xmas-tree small" viewBox="0 0 160 220">
+                        <rect x="70" y="180" width="20" height="30" rx="3" fill="#6b4226"/>
+                        <path d="M80 70 L140 185 Q80 196 20 185 Z" fill="url(#xmasTreeG)"/>
+                        <path d="M80 45 L128 140 Q80 150 32 140 Z" fill="url(#xmasTreeG)"/>
+                        <path d="M80 22 L114 95 Q80 103 46 95 Z" fill="url(#xmasTreeG)"/>
+                        <path d="M20 185 Q80 196 140 185 Q132 178 124 183 Q110 176 98 184 Q86 177 74 184 Q60 177 48 183 Q36 177 20 185Z" fill="#f4f7f8"/>
+                        <path d="M32 140 Q80 150 128 140 Q120 134 112 139 Q98 132 86 140 Q74 133 62 140 Q50 133 32 140Z" fill="#f4f7f8"/>
+                        <path d="M46 95 Q80 103 114 95 Q106 89 98 94 Q88 88 78 95 Q66 89 46 95Z" fill="#f4f7f8"/>
+                        <g class="xmas-twinkle">
+                            <circle cx="66" cy="84" r="4" fill="#ffd36b"/><circle cx="96" cy="80" r="4" fill="#7fe0c4"/>
+                            <circle cx="58" cy="122" r="4.5" fill="#ff6b5e"/><circle cx="102" cy="124" r="4.5" fill="#ffd36b"/>
+                            <circle cx="50" cy="168" r="5" fill="#fff4dc"/><circle cx="82" cy="172" r="5" fill="#ffd36b"/><circle cx="116" cy="166" r="5" fill="#ff6b5e"/>
+                        </g>
+                        <path class="xmas-star" d="M80 2 l5.3 10.8 11.9 1.7-8.6 8.4 2 11.8L80 29.1l-10.6 5.6 2-11.8-8.6-8.4 11.9-1.7z" fill="#ffd36b"/>
+                    </svg>
+                </div>
+
+                <!-- Krippe: Maria, Josef & Jesuskind im Stall -->
+                <div class="xmas-krippe" aria-hidden="true">
+                    <svg viewBox="0 0 240 200">
+                        <defs>
+                            <radialGradient id="xmasKrippeGlow" cx=".5" cy=".6" r=".5">
+                                <stop offset="0" stop-color="#ffcf7a" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf7a" stop-opacity="0"/>
+                            </radialGradient>
+                            <radialGradient id="xmasKrippeLight" cx=".5" cy=".72" r=".65">
+                                <stop offset="0" stop-color="#ffe7a8"/><stop offset=".45" stop-color="#e9a94e"/><stop offset="1" stop-color="#7a4a1c"/>
+                            </radialGradient>
+                            <linearGradient id="xmasKrippeBeam" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" stop-color="#fff4c8" stop-opacity=".55"/><stop offset="1" stop-color="#fff4c8" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <ellipse class="xmas-krippe-glow" cx="120" cy="130" rx="120" ry="75" fill="url(#xmasKrippeGlow)"/>
+                        <polygon points="120,22 98,64 142,64" fill="url(#xmasKrippeBeam)"/>
+                        <!-- Stall -->
+                        <polygon points="44,96 120,56 196,96 196,190 44,190" fill="url(#xmasKrippeLight)"/>
+                        <rect x="38" y="92" width="7" height="98" rx="2" fill="#4a2e1a"/>
+                        <rect x="195" y="92" width="7" height="98" rx="2" fill="#4a2e1a"/>
+                        <polygon points="14,98 120,42 226,98 214,102 120,54 26,102" fill="#5b3a22"/>
+                        <path d="M14,97 L120,41 L226,97" fill="none" stroke="#f4f7f8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="40" cy="86" r="3.5" fill="#f4f7f8"/><circle cx="70" cy="70" r="3" fill="#f4f7f8"/><circle cx="170" cy="70" r="3" fill="#f4f7f8"/><circle cx="202" cy="86" r="3.5" fill="#f4f7f8"/>
+                        <rect x="44" y="184" width="152" height="8" fill="#6b4a26"/>
+                        <path d="M50,184 l6,-5 M62,184 l-4,-6 M178,184 l5,-6 M190,184 l-5,-5" stroke="#d9a94e" stroke-width="1.5" stroke-linecap="round"/>
+                        <!-- Josef -->
+                        <g fill="#2a1a10">
+                            <circle cx="80" cy="110" r="7.5"/>
+                            <path d="M73,118 Q80,114 87,118 L92,140 Q96,165 100,188 L62,188 Q66,160 70,140 Z"/>
+                            <path d="M74,124 Q66,130 63,138 L67,141 Q72,133 79,129 Z"/>
+                        </g>
+                        <path d="M63,188 L64,100 Q64,92 70,92 Q75,93 73,99" fill="none" stroke="#2a1a10" stroke-width="3" stroke-linecap="round"/>
+                        <!-- Maria -->
+                        <path fill="#2a1a10" d="M152,128 Q152,118 161,118 Q170,119 171,130 L176,160 Q182,178 184,188 L142,188 Q146,176 150,168 Q148,150 152,128 Z"/>
+                        <path fill="#2a1a10" d="M153,142 Q145,148 141,156 L145,159 Q151,151 157,147 Z"/>
+                        <!-- Krippe mit Jesuskind -->
+                        <path d="M104,188 L124,166 M136,188 L116,166" stroke="#3a2414" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M100,158 L140,158 L134,172 L106,172 Z" fill="#4a2e1a"/>
+                        <path d="M102,158 l-3,-4 M110,158 l1,-5 M130,158 l2,-5 M138,158 l3,-4" stroke="#e9b85e" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle class="xmas-halo" cx="109" cy="151" r="9" fill="none" stroke="#ffd36b" stroke-width="2"/>
+                        <ellipse cx="121" cy="154" rx="12" ry="5" fill="#f5efe4"/>
+                        <circle cx="109" cy="151" r="4.5" fill="#f5efe4"/>
+                        <!-- Stern von Betlehem -->
+                        <path class="xmas-krippe-star" d="M120,0 L124,10 L134,14 L124,18 L120,30 L116,18 L106,14 L116,10 Z" fill="#fff1b8"/>
+                    </svg>
+                </div>
+
+                <svg class="xmas-drift" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
+                    <path fill="rgba(222,232,236,.85)" d="M0,60 C150,20 260,70 420,45 C580,20 700,75 860,50 C1000,28 1100,60 1200,40 L1200,110 L0,110 Z"/>
+                    <path fill="#f4f7f8" d="M0,85 C120,55 240,95 380,72 C540,48 640,98 800,76 C960,56 1080,92 1200,70 L1200,110 L0,110 Z"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+
     <!--Menu Tab Section-->
     <section id="speisekarte" class="menu-section section-kt">
         <div class="auto-container">
@@ -428,7 +652,7 @@ body {
                         <li class="tab-btn active-btn" data-tab="#tab-1"><span>Vorspeisen & Suppen</span></li>
                         <li class="tab-btn" data-tab="#tab-2"><span>Salate</span></li>
                         <li class="tab-btn" data-tab="#tab-3"><span>Signature & Klassiker</span></li>
-                        <li class="tab-btn" data-tab="#tab-4"><span>Grill, Meer & Süßes</span></li>
+                        <li class="tab-btn" data-tab="#tab-4"><span>Pasta, Meer & Süßes</span></li>
                         <li class="tab-btn" data-tab="#tab-5"><span>Rumänische Klassiker</span></li>
                     </ul>
                 </div>
@@ -441,16 +665,16 @@ body {
                                     <h5 style="color: #c7a36c; margin-bottom: 20px; font-size: 20px;">Vorspeisen</h5>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Beef Tatar „Asiatische Art“</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€18,50</span></div></div>
-                                            <div class="text desc"><a href="#">Handgeschnittenes Rindfleisch mit Soja, Ingwer und Sesamöl | Gurke | Crème fraîche | gekochtes Ei | Toastbrot</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Beef Tatar „Asiatische Art“</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€17,50</span></div></div>
+                                            <div class="text desc"><a href="#">Handgeschnittenes Hüftsteak mit Soja, Ingwer und Sesamöl, Gurke, Crème fraîche, gekochtem Ei und Toastbrot</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G, N</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Getrüffeltes Kartoffelpüree</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€16,50</span></div></div>
-                                            <div class="text desc"><a href="#">Mit gebackenem Ei, sautiertem Blattspinat und Schaum von brauner Butter</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G, O</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Melanzani-Salat <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGETARISCH</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€13,80</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Kichererbsen-Hummus, eingelegter Paprika und Feta, dazu Gebäck</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G, L, M</a></div>
                                         </div>
                                     </div>
                                     <h5 style="color: #c7a36c; margin: 30px 0 20px 0; font-size: 20px;">Suppen</h5>
@@ -463,15 +687,8 @@ body {
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Knoblauch-Cremesuppe</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€6,50</span></div></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Kürbis-Cremesuppe <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGAN</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€6,70</span></div></div>
                                             <div class="text desc"><a href="#">Mit Brotcroutons</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, G, L</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Kürbis-Cremesuppe <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGAN</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€6,90</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Schwarzbrot-Croutons</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, L</a></div>
                                         </div>
                                     </div>
@@ -492,28 +709,22 @@ body {
                                     <h5 style="color: #c7a36c; margin-bottom: 20px; font-size: 20px;">Frisch & knackig</h5>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Backhendlsalat</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€16,90</span></div></div>
-                                            <div class="text desc"><a href="#">In Buttermilch marinierte Hühnerkeule in Kürbiskern-Panade auf Vogerlsalat, dazu lauwarmer Erdäpfelsalat</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G, O</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gerösteter Kürbissalat <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGETARISCH</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€15,80</span></div></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gerösteter Kürbissalat <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGETARISCH</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€15,20</span></div></div>
                                             <div class="text desc"><a href="#">Gemischter Salat mit Feigen, gebratenem Hokkaido, Feta und Senfdressing, dazu Gebäck</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, G, M, O</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Vogerlsalat</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€13,90</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Bratkartoffeln, Speck und gekochtem Ei</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, G, O</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Caesar Salad</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€9,50</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Parmesan und Brotcroutons</a></div>
+                                            <div class="text desc"><a href="#" style="color: #c7a36c;">+ Hühnerfilet €4,90</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, D, G, L, M, O</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gemischter Salat</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€5,80</span></div></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gemischter Salat</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€5,70</span></div></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: O</a></div>
                                         </div>
                                     </div>
@@ -532,65 +743,43 @@ body {
                             <div class="menu-col col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner">
                                     <h5 style="color: #c7a36c; margin-bottom: 20px; font-size: 20px;">Unsere Signature-Gerichte</h5>
+                                    <div class="text desc" style="margin-bottom: 10px;"><a href="#">Unsere Handschrift auf dem Teller.</a></div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">48 Stunden geschmortes Schulterscherzl</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€23,50</span></div></div>
-                                            <div class="text desc"><a href="#">Vom steirischen Rind, mit Speckbohnen, Zwiebelsauce und Nussbutter-Kartoffelpüree</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, L, O</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Confierte Entenkeule</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€22,80</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Kartoffelpüree, geschmortem Apfel-Rotkraut und Jus</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: G, L, M, O</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gegrilltes Hüftsteak, 180 g</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€26,50</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Pfeffersauce – Beilage nach Wahl (siehe Beilagen)</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gegrilltes Hüftsteak, 180 g</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€25,50</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Bratkartoffeln und Kräuterbutter</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: G, O</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gebratenes Lachsforellenfilet</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€27,50</span></div></div>
-                                            <div class="text desc"><a href="#">Auf Rote-Rüben-Püree mit geschmortem Hokkaido und Kräuter-Walnuss-Pesto</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: D, G, H, O</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gebratenes Lachsfilet</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€26,50</span></div></div>
+                                            <div class="text desc"><a href="#">Auf Fettuccine mit Zucchini, Spinat und Rosa-Pfeffer-Sauce</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, D, G, L, O</a></div>
                                         </div>
                                     </div>
                                     <h5 style="color: #c7a36c; margin: 30px 0 20px 0; font-size: 20px;">Aus der österreichischen Küche</h5>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Rindsgulasch</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€19,90</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Semmelknödel und Sauerrahm</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G, L, O</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Schweinsschnitzel „Wiener Art“</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€19,50</span></div></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Schweinsschnitzel „Wiener Art“</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€18,50</span></div></div>
                                             <div class="text desc"><a href="#">Mit Preiselbeeren und Zitrone – wahlweise mit Pommes frites oder Petersilienkartoffeln</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Cordon bleu vom Schwein</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€20,50</span></div></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Cordon bleu vom Schwein</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€19,50</span></div></div>
                                             <div class="text desc"><a href="#">Gefüllt mit Bauernschinken und Gouda, mit Preiselbeeren und Zitrone – wahlweise mit Pommes frites oder Petersilienkartoffeln</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G</a></div>
                                         </div>
                                     </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Schupfnudeln mit Sauerkraut</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€18,90</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Sauerkraut-Creme, Lauch und Blutwurst</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, G, L, M, O</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Krautfleckerl <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGAN</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€16,90</span></div></div>
-                                            <div class="text desc"><a href="#">Mit karamellisierten Zwiebeln, roter Spitzpaprika und knusprigem Filoteig</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, O</a></div>
-                                        </div>
-                                    </div>
-                                    <h5 style="color: #c7a36c; margin: 30px 0 20px 0; font-size: 20px;">Beilagen</h5>
-                                    <div class="text desc" style="margin-bottom: 10px;"><a href="#">Pommes frites €5,50 &nbsp;·&nbsp; Trüffel-Pommes €6,50 &nbsp;·&nbsp; Rosmarinkartoffeln €5,50 &nbsp;·&nbsp; Speckbohnen €5,50 &nbsp;·&nbsp; Grillgemüse €5,50</a></div>
                                 </div>
                             </div>
                             <div class="menu-col img-col col-lg-6 col-md-12 col-sm-12">
@@ -600,59 +789,67 @@ body {
                             </div>
                         </div>
                     </div>
-                    <!--Tab 4: Grill, Meer & Süßes-->
+                    <!--Tab 4: Pasta, Meer & Süßes-->
                     <div class="tab" id="tab-4">
                         <div class="row clearfix">
                             <div class="menu-col col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner">
-                                    <h5 style="color: #c7a36c; margin-bottom: 20px; font-size: 20px;">Vom Rost und aus dem Wasser</h5>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Grillteller</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€22,90</span></div></div>
-                                            <div class="text desc"><a href="#">Rind, Huhn, Schwein und Grillwürstel mit Grillgemüse, Bratkartoffeln und Kräuterbutter</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: G, L, O</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Pulled-Beef-Burger</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€21,80</span></div></div>
-                                            <div class="text desc"><a href="#">Im Brioche mit karamellisierten roten Zwiebeln, Trüffelmayonnaise und Rucola, dazu Pommes frites und Barbecue-Sauce</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, L, M, O</a></div>
-                                        </div>
-                                    </div>
+                                    <h5 style="color: #c7a36c; margin-bottom: 20px; font-size: 20px;">Pasta, Meer & Vegetarisch</h5>
                                     <div class="dish-block">
                                         <div class="inner-box">
                                             <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gegrillte Calamari</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€19,90</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Grillgemüse, Kräuterbutter und Knoblauchbrot</a></div>
+                                            <div class="text desc"><a href="#">Mit Grillgemüse und Knoblauchbrot</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, B, G</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Miesmuscheln</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€19,50</span></div></div>
-                                            <div class="text desc"><a href="#">In Weißwein mit Chili, Zitronengras, Koriander und Knoblauch, dazu Knoblauchbrot</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, B, G, O</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Spaghetti Carbonara</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€15,50</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Guanciale, Eigelb und Parmesan</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="dish-block">
+                                        <div class="inner-box">
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Fettuccine in cremiger Champignonsauce <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGETARISCH MÖGLICH</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€14,50</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Spinat, Parmesan und Trüffelöl</a></div>
+                                            <div class="text desc"><a href="#" style="color: #c7a36c;">+ Hüftsteak-Streifen €6,50</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G, L, M, O</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="dish-block">
+                                        <div class="inner-box">
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gefüllte Ofenkartoffel <span style="color: #c7a36c; font-size: 11px; letter-spacing: 1px;">VEGAN MÖGLICH</span></a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€14,50</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Spinat, Champignons und Kräutersauce</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: G, L, O</a></div>
+                                        </div>
+                                    </div>
+                                    <h5 style="color: #c7a36c; margin: 30px 0 20px 0; font-size: 20px;">Für den kleinen Hunger</h5>
+                                    <div class="dish-block">
+                                        <div class="inner-box">
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Kinderschnitzel mit Pommes frites</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€8,90</span></div></div>
+                                            <div class="text desc"><a href="#">Mit Ketchup und Mayonnaise</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="dish-block">
+                                        <div class="inner-box">
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Spaghetti mit Tomatensauce</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€7,60</span></div></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, L, M, O</a></div>
                                         </div>
                                     </div>
                                     <h5 style="color: #c7a36c; margin: 30px 0 20px 0; font-size: 20px;">Zum Schluss</h5>
                                     <div class="dish-block">
                                         <div class="inner-box">
                                             <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Kaiserschmarrn</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€9,50</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Rosinen und Apfelmus</a></div>
+                                            <div class="text desc"><a href="#">Mit Rosinen, Apfelmus und Vanilleeis</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Kürbis-Crème-brûlée</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€8,50</span></div></div>
-                                            <div class="text desc"><a href="#">Mit Zimt und Kardamom, dazu Vanilleeis</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: C, G</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Salzburger Nockerl für zwei</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€16,90</span></div></div>
-                                            <div class="text desc"><a href="#">Frisch aus dem Ofen – bitte 25 Minuten vorher bestellen, am besten gleich mit der Hauptspeise</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Lava Cake</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€8,50</span></div></div>
+                                            <div class="text desc"><a href="#">Warmer Schokoladenkuchen mit flüssigem Kern, Vanilleeis und Himbeersauce</a></div>
                                             <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, C, G</a></div>
                                         </div>
                                     </div>
@@ -660,7 +857,7 @@ body {
                             </div>
                             <div class="menu-col img-col col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner">
-                                    <div class="image"><img src="images/resource/menus-2.jpg" alt="Grill, Meer & Süßes"></div>
+                                    <div class="image"><img src="images/resource/menus-2.jpg" alt="Pasta, Meer & Süßes"></div>
                                 </div>
                             </div>
                         </div>
@@ -688,16 +885,9 @@ body {
                                     </div>
                                     <div class="dish-block">
                                         <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Ostropel de pui</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€19,50</span></div></div>
-                                            <div class="text desc"><a href="#">Geschmorte Hühner-Oberkeule in Tomaten-Knoblauch-Sauce mit Polenta und Sauerrahm-Jungzwiebel</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, G, O</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Varză călită</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€18,90</span></div></div>
-                                            <div class="text desc"><a href="#">Gedünstetes Sauerkraut mit würzigen Würsteln, geräuchertem Fleisch, Polenta und Filoteig</a></div>
-                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: A, G, L, M, O</a></div>
+                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Ceafă de porc la grătar</a></h6></div> <span class="menu-list-line"> </span> <div class="price"><span>€18,90</span></div></div>
+                                            <div class="text desc"><a href="#">Gegrilltes Schopfsteak vom Schwein mit knusprigen Röstkartoffeln, sauer eingelegtem Gemüse und Knoblauchsauce</a></div>
+                                            <div class="text desc"><a href="#" style="color: #999; font-size: 12px;">Allergene: G, L, M, O</a></div>
                                         </div>
                                     </div>
                                     <div class="dish-block">
@@ -897,85 +1087,6 @@ body {
                 <h2>Events & Feiern</h2>
                 <p style="color: #999; font-size: 16px; max-width: 700px; margin: 15px auto 0; line-height: 1.6;">Ob Geburtstag, Taufe, Firmenevent, Weihnachtsfeier oder ein besonderer Anlass – wir gestalten Ihren Event zu einem unvergesslichen Erlebnis. Kontaktieren Sie uns für eine individuelle Planung!</p>
             </div>
-            <!--Weihnachtsfeiern Menü-->
-            <div class="row clearfix" style="margin-bottom: 50px;">
-                <div class="col-lg-10 col-md-12 col-sm-12" style="margin: 0 auto;">
-                    <div style="background: #1c1c1c; border: 1px solid #c7a36c; padding: 45px 40px;">
-                        <div class="title-box centered" style="margin-bottom: 35px;">
-                            <div class="subtitle"><span>Weihnachtsfeiern</span></div>
-                            <h3 style="color: #c7a36c; font-size: 28px; margin-top: 8px;">Menü</h3>
-                        </div>
-
-                        <div class="row clearfix">
-                            <div class="menu-col col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner">
-                                    <h5 style="color: #c7a36c; margin-bottom: 20px; font-size: 20px;">Vorspeise</h5>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Beef Tatar „Asiatische Art“</a></h6></div></div>
-                                            <div class="text desc"><a href="#">Soja | Ingwer | Sesamöl | Gurke | Crème fraîche | Gekochtes Ei | Toastbrot</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="text desc" style="color: #c7a36c; font-style: italic; margin: 10px 0;">oder</div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Pilz-Tatar</a></h6></div></div>
-                                            <div class="text desc"><a href="#">Verschiedene Pilz-Variationen | Parmesan-Espuma | Sherry-Emulsion | Gepickeltes Gemüse | Schwarzbrot</a></div>
-                                        </div>
-                                    </div>
-
-                                    <h5 style="color: #c7a36c; margin: 30px 0 20px 0; font-size: 20px;">Suppe</h5>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Maronicreme-Suppe</a></h6></div></div>
-                                            <div class="text desc"><a href="#">Mit Rotkraut-Chips und Zitronenöl</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="menu-col col-lg-6 col-md-12 col-sm-12">
-                                <div class="inner">
-                                    <h5 style="color: #c7a36c; margin-bottom: 20px; font-size: 20px;">Hauptspeise</h5>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Rosa gebratene Beiried</a></h6></div></div>
-                                            <div class="text desc"><a href="#">Spinat-Kartoffelstampf | Konfierte Karotten | Sauce Béarnaise | Jus</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="text desc" style="color: #c7a36c; font-style: italic; margin: 10px 0;">oder</div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">In Kernöl pochiertes Buttermakrelenfilet</a></h6></div></div>
-                                            <div class="text desc"><a href="#">Beluga-Linsen | Rote Rüben | Beurre blanc | Rote Spitzpaprika | Sauerrahm-Kren</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="text desc" style="color: #c7a36c; font-style: italic; margin: 10px 0;">oder</div>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Gerösteter Blumenkohl</a></h6></div></div>
-                                            <div class="text desc"><a href="#">Harissa | Marinierter Chinakohl | Mandel | Madras-Curry</a></div>
-                                        </div>
-                                    </div>
-
-                                    <h5 style="color: #c7a36c; margin: 30px 0 20px 0; font-size: 20px;">Dessert</h5>
-                                    <div class="dish-block">
-                                        <div class="inner-box">
-                                            <div class="title clearfix"><div class="ttl clearfix"><h6><a href="#">Rotwein-Birne gefüllt mit Haselnuss-Nougatcreme</a></h6></div></div>
-                                            <div class="text desc"><a href="#">Zimt-Eis | Schokoladen-Crumble</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="text" style="text-align: center; margin-top: 35px; padding-top: 25px; border-top: 1px solid rgba(199, 163, 108, 0.3);">
-                            <span style="color: #c7a36c; font-size: 22px;">Preis pro Person: 57 €</span>
-                            <div style="color: #999; font-size: 14px; margin-top: 12px;">Für Ihre Weihnachtsfeier – wir bitten um Reservierung unter <a href="tel:+436765809878" style="color: #c7a36c;">+43 676 5809878</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row justify-content-center clearfix">
                 <!--Instagram Post Neu 1-->
                 <div class="col-lg-4 col-md-6 col-sm-12" style="margin-bottom: 30px;">
@@ -1118,6 +1229,7 @@ body {
 <script src="js/wow.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/custom-script.js"></script>
+<script src="js/weihnachten.js"></script>
 
 <!-- Smooth Scroll CSS -->
 <style>
